@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+// 1. IMPORT ACTION CREATOR
+import { addToDo } from '../actions'
+import { connect } from 'react-redux'
 
 class AddTodoForm extends Component {
   constructor(props) {
@@ -12,6 +15,7 @@ class AddTodoForm extends Component {
 
   submitForm = (e) => {
     e.preventDefault()
+    this.props.addToDo(this.state.todo)
     this.setState({ todo: '' });
   }
 
@@ -30,4 +34,10 @@ class AddTodoForm extends Component {
   }
 }
 
-export default AddTodoForm;
+
+// 2. FUNCTION THAT SENDS OUR ACTION TO OUR REDUCER, LEADING THE STATE TO CHANGE(GLOBAL STORE) / GIVES ACCESS TO THE PROPS
+const mapDispatchToProps = (dispatch) => ({
+  addToDo: text => dispatch( addToDo(text))
+})
+
+export default connect(null, mapDispatchToProps)(AddTodoForm)
