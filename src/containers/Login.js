@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { addToDo } from '../actions'
 import { connect } from 'react-redux'
+import { getNPbyState } from '../apiCalls/apiCalls'
 
 class Login extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ class Login extends Component {
       todo: '',
       userName: '',
       email: '',
-      stateCode: ''
+      stateCode: '',
+      error: ''
     }
   }
 
@@ -29,6 +31,15 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault()
+    const validState = this.state.stateCode === 'co'
+    if (validState) {
+      this.setState({ error: ''})
+      getNPbyState()
+    } else {
+      this.setState({ error: 'Enter valid state code'})
+    }
+
+
     this.props.addToDo(this.state.todo)
     this.setState({ todo: '' })
   }
