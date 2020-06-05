@@ -1,6 +1,5 @@
 @import './variables';
 @import './mixins';
-@import './media-queries';
 
 * {
   margin: 0;
@@ -19,3 +18,33 @@ html {
    width: 100%;
    background-color: $background-light;
  }
+
+ .nav-container {
+   display: flex;
+   overflow: hidden;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   padding: 20px;
+   justify-content: space-between;
+   background-color: $background-medium-dark;
+   z-index: 999;
+   color: $font-light;
+   .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    @include hover-opacity;
+    .nav-icon {
+      font-size: 2.5rem;
+      padding-bottom: 5px;
+    }
+    p {
+      color: white;
+      font-size: .7rem;
+    }
+   }
+ }
+
+ @import './media-queries';

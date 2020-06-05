@@ -2,29 +2,30 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsBucketFill, BsFillPersonFill } from 'react-icons/bs'
 import { FaCheckCircle, FaSearch, FaMapMarkedAlt } from 'react-icons/fa'
+import '../scss/index.scss'
 
 const Nav = () => {
     return (
-        <nav>
+        <nav className='nav-container'>
             <Link to='explore' className='nav-item'>
-                <FaSearch/>
-                EXPLORE
+                <FaSearch className='nav-icon'/>
+                <p>EXPLORE</p>
             </Link>
             <Link to='bucketlist' className='nav-item'>
-                <BsBucketFill/>
-                BUCKET LIST
+                <BsBucketFill className='nav-icon'/>
+                <p>BUCKET LIST</p>
             </Link>
             <Link to='visited' className='nav-item'>
-                <FaCheckCircle/>
-                VISITED
+                <FaCheckCircle className='nav-icon'/>
+                <p>VISITED</p>
             </Link>
             <Link to='map' className='nav-item'>
-                <FaMapMarkedAlt/>
-                MAP
+                <FaMapMarkedAlt className='nav-icon'/>
+                <p>MAP</p>
             </Link>
             <Link to='userpage' className='nav-item'>
-                <BsFillPersonFill/>
-                USERPAGE
+                <BsFillPersonFill className='nav-icon'/>
+                <p>USERPAGE</p>
             </Link>
         </nav>
     )

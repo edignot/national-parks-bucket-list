@@ -5,11 +5,12 @@ $break4: 1024px;
 $break5: 1280px;
 
 @media (min-width: $break1) {
-   
+    .nav-container {
+        justify-content: space-evenly;
+    }
 }
 
 @media (min-width: $break2) {
-    
 }
 
 @media (min-width: $break3) {
