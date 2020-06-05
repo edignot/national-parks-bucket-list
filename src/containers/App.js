@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Route, Redirect, Switch } from 'react-router-dom'
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom'
 import Login from './Login'
 import NotFound from '../components/NotFound'
 import NPContainer from './NPContainer'
