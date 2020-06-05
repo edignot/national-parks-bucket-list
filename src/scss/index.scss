@@ -20,6 +20,8 @@ html {
    background-color: $background-light;
  }
 
+
+ // LOGIN
 .login-container {
   @include background;
   .login-wrapper {
@@ -100,12 +102,50 @@ html {
   }
 }
 
-
+// LOADING
 .loading-container {
   .bucket-empty,
   .bucket-full {
    font-size: 6rem;
  }
+}
+
+.np-container {
+  width: 90%;
+  @include container-grid;
+  background-color: $background-light;
+  padding: 50px 0 150px;
+}
+
+.np-card-wrapper {
+    background-color: $background-white;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include box-shadow-radius;
+    .np-card-img-wrapper {
+      position: relative;
+      .np-card-img{
+        @include icon-hover;
+        opacity: 0.9;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 7px 7px 0 0;
+      }
+      .np-card-bucket,
+      .np-card-check {
+        font-size: 3rem;
+        @include icon-on-img;
+        @include icon-hover;
+        right: 10px;
+      }
+      .np-card-bucket {
+        left: 10px;
+      }
+    }
 }
 
  @import './media-queries';

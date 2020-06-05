@@ -14,7 +14,10 @@ $break5: 1280px;
             font-size: 2.5rem;
         }
     }
-    
+    .np-container {
+        grid-template: auto / repeat(1, 1fr);
+        width: 70%;
+    }
 }
 
 @media (min-width: $break2) {
@@ -24,17 +27,29 @@ $break5: 1280px;
             font-size: 2.8rem;
         }
     }
+    .np-container {
+        grid-template: auto / repeat(2, 1fr);
+        width: 90%;
+    }
 }
 
 @media (min-width: $break3) {
     .login-wrapper {
         width: 50%;
     }
+    .np-container {
+        grid-template: auto / repeat(2, 1fr);
+        width: 80%;
+    }
 }
 
 @media (min-width: $break4) {
     .login-wrapper {
         width: 40%;
+    }
+    .np-container {
+        grid-template: auto / repeat(3, 1fr);
+        width: 90%;
     }
 }
 
