@@ -3,6 +3,7 @@ import { addAllNP, login } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 import { stateCodes } from '../constants'
+import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import '../scss/index.scss'
 
 class Login extends Component {
@@ -65,50 +66,58 @@ class Login extends Component {
     return (
       <section className='login-container'>
         {!this.state.loading ?
-        <form
-          className='login-form' 
-          onSubmit={this.handleLogin}
-        >
-          <p>{this.state.error}</p>
-          <div className='login-item'>
-            <label htmlFor="userName">Username:</label>
-            <input
-              name='userName'
-              type='text'
-              value={this.state.userName}
-              placeholder="username"
-              onChange={this.handleChange} 
-            />
-          </div>
-          <div className='login-item'>
-            <label htmlFor="email">Email:</label>
-            <input
-              name='email'
-              type='text'
-              value={this.state.email}
-              placeholder="email"
-              onChange={this.handleChange} 
-            />
-          </div>
-          <div className='login-item'>
-            <label htmlFor="stateCode">State code:</label>
-            <input
-              name='stateCode'
-              type='text'
-              value={this.state.stateCode}
-              placeholder="e.g. CO"
-              onChange={this.handleChange} 
-            />
-          </div>
-          <button
-            className='login-btn'
-            disabled={!this.isFormCompleted()}
+        <section className='login-wrapper'>
+          <h1 className='login-header'>
+            National Parks <BsBucketFill/> List
+          </h1>
+          <form
+            className='login-form' 
+            onSubmit={this.handleLogin}
           >
-            LOGIN
-          </button>
-        </form> : 
-        <section>
-          <h1>Loading</h1>
+            <p className='error-msg'>{this.state.error}</p>
+            <div className='login-item'>
+              <label htmlFor="userName">* Username:</label>
+              <input
+                name='userName'
+                type='text'
+                value={this.state.userName}
+                placeholder="username"
+                onChange={this.handleChange} 
+              />
+            </div>
+            <div className='login-item'>
+              <label htmlFor="email">* Email:</label>
+              <input
+                name='email'
+                type='text'
+                value={this.state.email}
+                placeholder="email"
+                onChange={this.handleChange} 
+              />
+            </div>
+            <div className='login-item'>
+              <label htmlFor="stateCode">* State code:</label>
+              <input
+                name='stateCode'
+                type='text'
+                value={this.state.stateCode}
+                placeholder="e.g. CO"
+                onChange={this.handleChange} 
+              />
+            </div>
+            <p className='error-msg'>* required</p>
+            <button
+              className='login-btn'
+              disabled={!this.isFormCompleted()}
+            >
+              LOGIN
+            </button>
+          </form>
+        </section> : 
+        <section className='loading-container'>
+          <BsBucket className='bucket-empty'/>
+          {/* <BsBucketFill className='bucket-full'/> */}
+          <p>WAIT... FILLING THE BUCKET</p>
         </section>
         }
       </section>

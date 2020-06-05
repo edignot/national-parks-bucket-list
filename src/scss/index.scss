@@ -9,7 +9,7 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   box-sizing: border-box;
-  color: $font-dark;
+  color: $font-light;
 }
 
 body,
@@ -19,7 +19,53 @@ html {
    background-color: $background-light;
  }
 
- .nav-container {
+.login-container {
+  @include background;
+  .login-wrapper {
+     margin: auto;
+    .login-header {
+      font-weight: 200;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .login-form {
+      width: 100%;
+      position: relative;
+      @include box-shadow-radius;
+      @include form;
+      margin: auto;
+      padding-top: 50px; 
+      .login-item {
+        @include form-item;
+        input {
+          @include box-shadow-radius;
+          @include form-input;
+        }
+        label {
+          color: $background-dark;
+        }
+      }
+      .login-btn {
+        margin-top: 20px;
+        @include button($background-dark);
+      }
+      .error-msg {
+        color: $alert-error;
+        position: relative;
+      }
+    }
+  }
+}
+
+.login-wrapper {
+  width: 80%;
+  .login-header {
+    font-size: 2rem;
+  }
+}
+
+
+.nav-container {
    display: flex;
    overflow: hidden;
    position: fixed;
@@ -44,7 +90,15 @@ html {
       color: white;
       font-size: .7rem;
     }
-   }
+  }
+}
+
+
+.loading-container {
+  .bucket-empty,
+  .bucket-full {
+   font-size: 6rem;
  }
+}
 
  @import './media-queries';

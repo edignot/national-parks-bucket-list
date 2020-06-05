@@ -15,11 +15,8 @@ class App extends Component {
     const { user, np } = this.props
     return (
       <section className="app-container">
-        <h1>National Parks Bucket List</h1>
-
         {!user.userName && <Redirect to="/login" />}
         {np.length>0 && <Redirect to="/" />}
-
         <Switch>
           <Route exact path = '/login' component={Login}/>
           <Route exact path = '/'>
