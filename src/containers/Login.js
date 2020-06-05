@@ -18,7 +18,6 @@ class Login extends Component {
 
   handleChange = (e) => {
     this.resetError()
-    this.isFormCompleted()
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -32,17 +31,16 @@ class Login extends Component {
       email,
       stateCode
     } = this.state
-    return (userName !== '' && email !== '' && stateCode !== '') ? false : true
+    return (userName !== '' && email !== '' && stateCode !== '') ? true : false
   }
 
   handleLogin = async (e) => {
     e.preventDefault()
-    const valid = this.isStateCodeValid()
-    if (valid) {
+    if (this.isStateCodeValid()) {
       this.resetError()
+      this.props.login(this.getUserData())
       const npData = await getNPbyState(this.state.stateCode)
       npData && this.props.addAllNP(npData.data)
-      this.props.login(this.getUserData())
     } else {
       this.setState({ error: 'Enter valid state code'})
     }
@@ -99,7 +97,7 @@ class Login extends Component {
             />
           </div>
           <button
-            disabled={this.isFormCompleted()}
+            disabled={!this.isFormCompleted()}
           >
             LOGIN
           </button>
@@ -110,8 +108,8 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addAllNP: np => dispatch( addAllNP(np)),
-  login: user => dispatch( login(user))
+  login: user => dispatch( login(user)),
+  addAllNP: np => dispatch( addAllNP(np))
 })
 
 export default connect(null, mapDispatchToProps)(Login)
