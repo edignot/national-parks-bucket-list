@@ -61,14 +61,14 @@ class Login extends Component {
 
   render() {
     return (
-      <sectio className='login-container'>
+      <section className='login-container'>
         <form
           className='login-form' 
           onSubmit={this.handleLogin}
         >
           <p>{this.state.error}</p>
           <div className='login-item'>
-            <label for="userName">Username:</label>
+            <label htmlFor="userName">Username:</label>
             <input
               name='userName'
               type='text'
@@ -78,7 +78,7 @@ class Login extends Component {
             />
           </div>
           <div className='login-item'>
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input
               name='email'
               type='text'
@@ -88,7 +88,7 @@ class Login extends Component {
             />
           </div>
           <div className='login-item'>
-            <label for="stateCode">State code:</label>
+            <label htmlFor="stateCode">State code:</label>
             <input
               name='stateCode'
               type='text'
@@ -103,7 +103,7 @@ class Login extends Component {
             LOGIN
           </button>
         </form>
-      </sectio>
+      </section>
     )
   }
 }
