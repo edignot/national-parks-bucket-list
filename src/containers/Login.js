@@ -3,7 +3,7 @@ import { addAllNP, login } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 import { stateCodes } from '../constants'
-import { Link } from 'react-router-dom'
+import '../index.css'
 
 class Login extends Component {
   constructor(props) {
@@ -98,13 +98,11 @@ class Login extends Component {
               onChange={this.handleChange} 
             />
           </div>
-          <Link to='/'>
-            <button
-              disabled={this.isFormCompleted()}
-            >
-              LOGIN
-            </button>
-          </Link>
+          <button
+            disabled={this.isFormCompleted()}
+          >
+            LOGIN
+          </button>
         </form>
       </section>
     )
