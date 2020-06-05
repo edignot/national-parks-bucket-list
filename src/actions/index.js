@@ -13,6 +13,11 @@ export const deleteNP = np => ({
     np
 })
 
+export const displayNP = id => ({
+    type: 'DISPLAY_NP',
+    id
+})
+
 export const login = user => ({
     type: 'LOGIN',
     user

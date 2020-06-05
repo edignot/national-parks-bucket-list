@@ -118,6 +118,7 @@ html {
 }
 
 .np-card-wrapper {
+    cursor: pointer;
     background-color: $background-white;
     width: auto;
     height: auto;
@@ -125,6 +126,12 @@ html {
     flex-direction: column;
     justify-content: space-between;
     @include box-shadow-radius;
+    h2 {
+      color: $font-dark;
+      font-size: 1.4rem;
+      padding: 15px;
+      text-align: center;
+    }
     .np-card-img-wrapper {
       position: relative;
       .np-card-img{

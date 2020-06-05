@@ -10,6 +10,7 @@ export const cleanNPData = (npData) => {
             url: np.url,
             description: np.description,
             images: [np.images[0]],
+            states: np.states,
             bucket: false,
             visited: false
         }

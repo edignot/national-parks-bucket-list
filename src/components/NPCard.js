@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { displayNP } from '../actions'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
 
-const NPCard = ({id, name, designation, images}) => {
+const NPCard = ({id, name, designation, images, displayNP}) => {
     const randomImg = images[Math.floor(Math.random() * images.length)]
     return (
         <section className='np-card-wrapper'>
@@ -27,6 +30,10 @@ const NPCard = ({id, name, designation, images}) => {
                     onClick={() => alert('hi')}
                     />
                 }
+            <Link 
+                to={`np/${name}`}
+                onClick={() => displayNP(id)}
+            >
                 <img
                     className="np-card-img"
                     src={randomImg ?
@@ -35,10 +42,20 @@ const NPCard = ({id, name, designation, images}) => {
                     alt={name}
                     width="500"
                 />
+            </Link>
             </div>
+            <Link 
+                to={`np/${name}`}
+                onClick={() => displayNP(id)}
+            >
             <h2>{name} {designation}</h2>
+            </Link>
         </section>
     )
 }
 
-export default NPCard
+const mapDispatch = (dispatch) => ({
+    displayNP: id => dispatch( displayNP(id))
+})
+
+export default connect(null, mapDispatch)(NPCard)
