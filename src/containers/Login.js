@@ -3,6 +3,7 @@ import { addAllNP, login } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 import { stateCodes } from '../constants'
+import { cleanNPData } from '../helper'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import '../scss/index.scss'
 
