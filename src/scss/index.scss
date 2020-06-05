@@ -1,0 +1,21 @@
+@import './variables';
+@import './mixins';
+@import './media-queries';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  box-sizing: border-box;
+  color: $font-dark;
+}
+
+body,
+html {
+   height: 100vh;
+   width: 100%;
+   background-color: $background-light;
+ }

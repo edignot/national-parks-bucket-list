@@ -3,7 +3,7 @@ import { addAllNP, login } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 import { stateCodes } from '../constants'
-import '../index.css'
+import '../scss/index.scss'
 
 class Login extends Component {
   constructor(props) {
