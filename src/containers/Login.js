@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addToDo, addAllNP } from '../actions'
+import { addAllNP } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 
@@ -7,7 +7,6 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      todo: '',
       userName: '',
       email: '',
       stateCode: '',
@@ -31,13 +30,12 @@ class Login extends Component {
 
   handleLogin = async (e) => {
     e.preventDefault()
+    // FETCH DATA AND SAVE TO GLOBAL STORE
     const validState = this.state.stateCode === 'co'
     if (validState) {
       this.setState({ error: ''})
       const npData = await getNPbyState(this.state.stateCode)
-      // response - np.data
       npData && this.props.addAllNP(npData.data)
-      console.log(npData.data)
     } else {
       this.setState({ error: 'Enter valid state code'})
     }
@@ -47,13 +45,6 @@ class Login extends Component {
     return (
       <section>
         <form onSubmit={this.handleLogin}>
-          <input
-            name='todo'
-            type='text'
-            value={this.state.todo}
-            placeholder="Add A Todo"
-            onChange={this.handleChange} 
-          />
           <input
             name='userName'
             type='text'
@@ -88,7 +79,6 @@ class Login extends Component {
 
 
 const mapDispatchToProps = (dispatch) => ({
-  addToDo: text => dispatch( addToDo(text)),
   addAllNP: np => dispatch( addAllNP(np))
 })
 

@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
-import AddTodoForm from './Login'
-import ToDoList from './ToDoList'
-
-
 import Login from './Login'
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Another Todo Box</h1>
+      <div className="app-container">
+        <h1>National Parks Bucket List</h1>
         <Login />
-        <ToDoList />
       </div>
     );
   }
