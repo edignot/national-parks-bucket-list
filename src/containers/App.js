@@ -15,16 +15,14 @@ class App extends Component {
         <h1>National Parks Bucket List</h1>
 
         {!user.username && <Redirect to="/login" />}
-        {(np.length>0) && <Redirect to="/" />}
+        {np.length>0 && <Redirect to="/" />}
 
         <Switch>
           <Route exact path = '/login' component={Login}/>
-
           <Route exact path = '/'>
               <NPContainer/>
               <Nav/>
           </Route>
-
           <Route component={NotFound} />
         </Switch>
 
