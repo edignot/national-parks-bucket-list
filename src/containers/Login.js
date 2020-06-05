@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addToDo } from '../actions'
+import { addToDo, addAllNP } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 
@@ -29,19 +29,18 @@ class Login extends Component {
     return (userName !== '' && email !== '' && stateCode !== '') ? false : true
   }
 
-  handleLogin = (e) => {
+  handleLogin = async (e) => {
     e.preventDefault()
     const validState = this.state.stateCode === 'co'
     if (validState) {
       this.setState({ error: ''})
-      getNPbyState()
+      const npData = await getNPbyState(this.state.stateCode)
+      // response - np.data
+      npData && this.props.addAllNP(npData.data)
+      console.log(npData.data)
     } else {
       this.setState({ error: 'Enter valid state code'})
     }
-
-
-    this.props.addToDo(this.state.todo)
-    this.setState({ todo: '' })
   }
 
   render() {
@@ -89,7 +88,8 @@ class Login extends Component {
 
 
 const mapDispatchToProps = (dispatch) => ({
-  addToDo: text => dispatch( addToDo(text))
+  addToDo: text => dispatch( addToDo(text)),
+  addAllNP: np => dispatch( addAllNP(np))
 })
 
 export default connect(null, mapDispatchToProps)(Login)
