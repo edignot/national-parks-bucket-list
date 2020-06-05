@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import NPCard from '../components/NPCard'
+import Search from './Search'
 
 const NPContainer = ({np}) => {
     const parks = np.map(park => {
@@ -13,13 +14,14 @@ const NPContainer = ({np}) => {
     })
     return (
         <section className='np-container'>
+            <Search/>
             { parks }
         </section>
     )
 }
 
-export const mapStateToProps = state => ({
+export const mapState = state => ({
     np: state.np
 })
 
-export default connect(mapStateToProps)(NPContainer)
+export default connect(mapState)(NPContainer)

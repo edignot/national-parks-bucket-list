@@ -19,13 +19,13 @@ const User = ({logout, deleteNP, user}) => {
     )
 }
 
-const mapStateToProps = state => ({
+const mapState = state => ({
     user: state.user
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatch = dispatch => ({
     logout: () => dispatch( logout()),
     deleteNP: () => dispatch( deleteNP())
   })
 
-export default connect(mapStateToProps, mapDispatchToProps)(User)
+export default connect(mapState, mapDispatch)(User)

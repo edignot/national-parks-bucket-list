@@ -108,9 +108,9 @@ class Login extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatch = (dispatch) => ({
   login: user => dispatch( login(user)),
   addAllNP: np => dispatch( addAllNP(np))
 })
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(null, mapDispatch)(Login)

@@ -45,15 +45,16 @@ class App extends Component {
           </Route>
           <Route component={NotFound} />
         </Switch>
+        {/* CHANGE TO LOADING CONDITION FOR NAV */}
         {np.length>0 && <Nav/>}
       </section>
     )
   } 
 }
 
-export const mapStateToProps = state => ({
+export const mapState = state => ({
   user: state.user,
   np: state.np
 })
 
-export default connect(mapStateToProps)(withRouter(App));
+export default connect(mapState)(App)

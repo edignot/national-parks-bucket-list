@@ -3,6 +3,11 @@ export const addAllNP = np => ({
     np
 })
 
+export const changeState = np => ({
+    type: 'CHANGE_STATE',
+    np
+})
+
 export const deleteNP = np => ({
     type: 'DELETE_NP',
     np

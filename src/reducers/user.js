@@ -9,9 +9,9 @@ const userTemplate = {
 export const user = ( state = userTemplate, action ) => {
     switch (action.type) {
         case 'LOGIN': 
-            return state = {...userTemplate, ...action.user}
+            return {...userTemplate, ...action.user}
         case 'LOGOUT':
-            return state = userTemplate
+            return userTemplate
         default:
             return state
     }
