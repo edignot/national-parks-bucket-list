@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { addAllNP } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
+import { stateCodes } from '../constants'
 
 class Login extends Component {
   constructor(props) {
@@ -15,8 +16,13 @@ class Login extends Component {
   }
 
   handleChange = (e) => {
+    this.resetError()
     this.isFormCompleted()
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  resetError = () => {
+    this.state.error = ''
   }
 
   isFormCompleted = () => {
@@ -30,10 +36,9 @@ class Login extends Component {
 
   handleLogin = async (e) => {
     e.preventDefault()
-    // FETCH DATA AND SAVE TO GLOBAL STORE
-    const validState = this.state.stateCode === 'co'
-    if (validState) {
-      this.setState({ error: ''})
+    const valid = this.isStateCodeValid()
+    if (valid) {
+      this.resetError()
       const npData = await getNPbyState(this.state.stateCode)
       npData && this.props.addAllNP(npData.data)
     } else {
@@ -41,10 +46,15 @@ class Login extends Component {
     }
   }
 
+  isStateCodeValid = () => {
+    return stateCodes.includes(this.state.stateCode.toLocaleUpperCase())
+  }
+
   render() {
     return (
       <section>
         <form onSubmit={this.handleLogin}>
+          <p>{this.state.error}</p>
           <input
             name='userName'
             type='text'
@@ -76,7 +86,6 @@ class Login extends Component {
     )
   }
 }
-
 
 const mapDispatchToProps = (dispatch) => ({
   addAllNP: np => dispatch( addAllNP(np))
