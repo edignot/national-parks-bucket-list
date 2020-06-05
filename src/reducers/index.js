@@ -1,9 +1,10 @@
-// CREATING STORE FROM ALL REDUCERS. COMBINE REDUCERS TAKES OBJECT AS AN ARGUMENT
 import { combineReducers} from 'redux'
-import { todos } from './todos'
+import { np } from './np'
+import { user } from './user'
 
 const rootReducer = combineReducers({
-    todos
+    np,
+    user
 })
 
 export default rootReducer

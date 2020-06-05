@@ -1,6 +1,14 @@
-// ACTIONS NEED TYPE AND PAYLOAD 
+export const addAllNP = np => ({
+    type: 'ADD_ALL_NP',
+    np
+})
 
-export const addToDo = todo => ({
-    type: 'ADD_TODO',
-    todo
+export const login = user => ({
+    type: 'LOGIN',
+    user
+})
+
+export const logout = userTemplate => ({
+    type: 'LOGOUT',
+    userTemplate
 })
