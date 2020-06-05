@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import Login from './Login'
+import { connect } from 'react-redux'
+import { Route, Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router';
 
 class App extends Component {
-
   render() {
+    const { user } = this.props
     return (
-      <div className="app-container">
+      <section className="app-container">
         <h1>National Parks Bucket List</h1>
-        <Login />
-      </div>
+        <Route exact path = '/' component={Login}/>
+      </section>
     );
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps,null)(withRouter(App));
