@@ -28,6 +28,9 @@ class App extends Component {
           <Route path = '/explore'>
               <ExploreContainer/>
           </Route>
+          <Route path = '/np'>
+              <NPContainer/>
+          </Route>
           <Route path = '/bucketlist'>
               <NPContainer/>
           </Route>

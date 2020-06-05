@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsBucketFill, BsFillPersonFill } from 'react-icons/bs'
-import { FaCheckCircle, FaSearch, FaMapMarkedAlt } from 'react-icons/fa'
+import { FaCheckCircle, FaSearch, FaMapMarkedAlt, FaListAlt } from 'react-icons/fa'
 import '../scss/index.scss'
 
 const Nav = () => {
@@ -10,6 +10,10 @@ const Nav = () => {
             <Link to='explore' className='nav-item'>
                 <FaSearch className='nav-icon'/>
                 <p>EXPLORE</p>
+            </Link>
+            <Link to='np' className='nav-item'>
+                <FaListAlt className='nav-icon'/>
+                <p>ALL PARKS</p>
             </Link>
             <Link to='bucketlist' className='nav-item'>
                 <BsBucketFill className='nav-icon'/>
