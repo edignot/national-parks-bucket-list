@@ -9,6 +9,7 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   box-sizing: border-box;
+  font-weight: 200;
   color: $font-light;
 }
 
@@ -55,6 +56,9 @@ html {
       }
     }
   }
+  .loading-wrapper {
+    margin: auto;
+  }
 }
 
 .login-wrapper {
@@ -64,6 +68,9 @@ html {
   }
 }
 
+.loading-msg {
+  font-size: 3rem;
+}
 
 .nav-container {
    display: flex;
