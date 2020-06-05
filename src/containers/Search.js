@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { changeState } from '../actions'
+import { changeState, addAllNP } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 import { stateCodes } from '../constants'
@@ -11,6 +11,7 @@ class Search extends Component {
         super(props);
         this.state = {
             stateCode: '',
+            stateCodeAdd: '',
             keyword: ''
         }
     }
@@ -27,6 +28,18 @@ class Search extends Component {
         e.preventDefault()
         const npData = await getNPbyState(this.state.stateCode)
         npData && this.props.changeState(npData.data)
+        this.clearInput('stateCode')
+    }
+
+    addState = async (e) => {
+        e.preventDefault()
+        const npData = await getNPbyState(this.state.stateCodeAdd)
+        npData && this.props.addAllNP(npData.data)
+        this.clearInput('stateCodeAdd')
+    }
+
+    clearInput = (key) => {
+        this.setState({ [key]: '' });
     }
 
     render () {
@@ -44,6 +57,22 @@ class Search extends Component {
                     <button
                         disabled={!this.isStateCodeValid()}
                         onClick={this.changeState}
+                    >
+                        <FaSearchLocation/>
+                    </button>
+                </div>
+                <div className='search-item'>
+                    <label htmlFor="stateCodeAdd">Add state:</label>
+                    <input
+                        name='stateCodeAdd'
+                        type='text'
+                        value={this.state.stateCodeAdd}
+                        placeholder="e.g. CO ( one at a time... )"
+                        onChange={this.handleChange} 
+                    />
+                    <button
+                        disabled={!this.isStateCodeValid()}
+                        onClick={this.addState}
                     >
                         <FaSearchLocation/>
                     </button>
@@ -67,7 +96,8 @@ class Search extends Component {
 }
 
 const mapDispatch = (dispatch) => ({
-    changeState: np => dispatch( changeState(np))
+    changeState: np => dispatch( changeState(np)),
+    addAllNP: np => dispatch( addAllNP(np))
 })
 
 export default connect(null, mapDispatch)(Search)
