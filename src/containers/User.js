@@ -1,12 +1,15 @@
 import React from 'react'
-import { logout } from '../actions'
+import { logout, deleteNP } from '../actions'
 import { connect } from 'react-redux'
 import '../scss/index.scss'
 
-const User = () => {
+const User = ({logout, deleteNP}) => {
     return (
         <section>User
-            <button>
+            <button
+                className='logout-btn' 
+                onClick={() => {logout(); deleteNP()}}
+            >
                 LOGOUT
             </button>
         </section>
@@ -15,6 +18,7 @@ const User = () => {
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch( logout()),
+    deleteNP: () => dispatch( deleteNP())
   })
 
 export default connect(null, mapDispatchToProps)(User)

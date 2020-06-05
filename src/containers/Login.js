@@ -97,6 +97,7 @@ class Login extends Component {
             />
           </div>
           <button
+            className='login-btn'
             disabled={!this.isFormCompleted()}
           >
             LOGIN

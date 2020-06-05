@@ -3,6 +3,11 @@ export const addAllNP = np => ({
     np
 })
 
+export const deleteNP = np => ({
+    type: 'DELETE_NP',
+    np
+})
+
 export const login = user => ({
     type: 'LOGIN',
     user
