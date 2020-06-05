@@ -44,7 +44,9 @@ class Login extends Component {
       this.resetError()
       this.props.login(this.getUserData())
       const npData = await getNPbyState(this.state.stateCode)
-      npData && this.props.addAllNP(npData.data)
+      const npCleanedData = cleanNPData(npData.data)
+      npCleanedData && this.props.addAllNP(npCleanedData)
+      // npData && this.props.addAllNP(npData.data)
       this.setState({ loading: false })
     } else {
       this.setState({ error: 'Enter valid state code'})

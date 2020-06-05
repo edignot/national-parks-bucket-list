@@ -33,6 +33,7 @@ const NPCard = ({id, name, designation, images}) => {
                          randomImg.url : 
                          'https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'}
                     alt={name}
+                    width="500"
                 />
             </div>
             <h2>{name} {designation}</h2>
