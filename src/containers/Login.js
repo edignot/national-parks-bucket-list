@@ -12,7 +12,8 @@ class Login extends Component {
       userName: '',
       email: '',
       stateCode: '',
-      error: ''
+      error: '',
+      loading: false
     }
   }
 
@@ -37,10 +38,12 @@ class Login extends Component {
   handleLogin = async (e) => {
     e.preventDefault()
     if (this.isStateCodeValid()) {
+      this.setState({ loading: true })
       this.resetError()
       this.props.login(this.getUserData())
       const npData = await getNPbyState(this.state.stateCode)
       npData && this.props.addAllNP(npData.data)
+      this.setState({ loading: false })
     } else {
       this.setState({ error: 'Enter valid state code'})
     }
@@ -61,6 +64,7 @@ class Login extends Component {
   render() {
     return (
       <section className='login-container'>
+        {!this.state.loading ?
         <form
           className='login-form' 
           onSubmit={this.handleLogin}
@@ -102,7 +106,11 @@ class Login extends Component {
           >
             LOGIN
           </button>
-        </form>
+        </form> : 
+        <section>
+          <h1>Loading</h1>
+        </section>
+        }
       </section>
     )
   }
