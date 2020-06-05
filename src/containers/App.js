@@ -45,7 +45,7 @@ class App extends Component {
           </Route>
           <Route component={NotFound} />
         </Switch>
-        <Nav/>
+        {np.length>0 && <Nav/>}
       </section>
     )
   } 
