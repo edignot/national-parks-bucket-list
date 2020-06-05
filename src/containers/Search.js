@@ -20,8 +20,8 @@ class Search extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    isStateCodeValid = () => {
-        return stateCodes.includes(this.state.stateCode.toLocaleUpperCase())
+    isStateCodeValid = (type) => {
+        return stateCodes.includes(this.state[type].toLocaleUpperCase())
     }
 
     changeState = async (e) => {
@@ -55,7 +55,7 @@ class Search extends Component {
                         onChange={this.handleChange} 
                     />
                     <button
-                        disabled={!this.isStateCodeValid()}
+                        disabled={!this.isStateCodeValid('stateCode')}
                         onClick={this.changeState}
                     >
                         <FaSearchLocation/>
@@ -71,7 +71,7 @@ class Search extends Component {
                         onChange={this.handleChange} 
                     />
                     <button
-                        disabled={!this.isStateCodeValid()}
+                        disabled={!this.isStateCodeValid('stateCodeAdd')}
                         onClick={this.addState}
                     >
                         <FaSearchLocation/>
