@@ -7,3 +7,8 @@ export const login = user => ({
     type: 'LOGIN',
     user
 })
+
+export const logout = userTemplate => ({
+    type: 'LOGOUT',
+    userTemplate
+})

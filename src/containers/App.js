@@ -17,7 +17,7 @@ class App extends Component {
       <section className="app-container">
         <h1>National Parks Bucket List</h1>
 
-        {!user.username && <Redirect to="/login" />}
+        {!user.userName && <Redirect to="/login" />}
         {np.length>0 && <Redirect to="/" />}
 
         <Switch>

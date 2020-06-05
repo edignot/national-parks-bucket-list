@@ -23,7 +23,7 @@ const Nav = () => {
                 <FaMapMarkedAlt className='nav-icon'/>
                 <p>MAP</p>
             </Link>
-            <Link to='userpage' className='nav-item'>
+            <Link to='user' className='nav-item'>
                 <BsFillPersonFill className='nav-icon'/>
                 <p>USERPAGE</p>
             </Link>
