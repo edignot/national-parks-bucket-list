@@ -3,9 +3,12 @@ import { logout, deleteNP } from '../actions'
 import { connect } from 'react-redux'
 import '../scss/index.scss'
 
-const User = ({logout, deleteNP}) => {
+const User = ({logout, deleteNP, user}) => {
     return (
-        <section>User
+        <section>
+            <p>Username: {user.userName}</p>
+            <p>Email: {user.email}</p>
+            <p>State: {user.stateCode.toUpperCase()}</p>
             <button
                 className='logout-btn' 
                 onClick={() => {logout(); deleteNP()}}
@@ -16,9 +19,13 @@ const User = ({logout, deleteNP}) => {
     )
 }
 
+const mapStateToProps = state => ({
+    user: state.user
+})
+
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch( logout()),
     deleteNP: () => dispatch( deleteNP())
   })
 
-export default connect(null, mapDispatchToProps)(User)
+export default connect(mapStateToProps, mapDispatchToProps)(User)
