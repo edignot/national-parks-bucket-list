@@ -7,7 +7,10 @@ const NPInfo = ({np, user}) => {
     const npInfo = np.find(park => park.id === user.npID)
     return (
         <section className='np-info-container'>
-            <SliderContainer images={np.images}/>
+            <SliderContainer 
+                images={npInfo.images}
+                id={npInfo.id}
+            />
             {npInfo.name}
         </section>
     )

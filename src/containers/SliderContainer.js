@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { toggleBucketNP, toggleVisitedNP } from '../actions'
+import { connect } from 'react-redux'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -8,6 +10,8 @@ import { BsBucket, BsBucketFill } from 'react-icons/bs'
 
 
 const SliderContainer = (props) => {
+    console.log('NPINFO', props.id)
+    console.log('IMAGES', props.images)
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -22,10 +26,10 @@ const SliderContainer = (props) => {
         'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
     ]
     
-    const sliderItems = imag.map(img => {
+    const sliderItems = props.images.map(img => {
         return (
           <div>
-            <img src={img} alt="spot" className="slider-img"/>
+            <img src={img.url} alt="spot" className="slider-img"/>
           </div>
         )
     })
@@ -37,24 +41,24 @@ const SliderContainer = (props) => {
                     className="details-back-btn"
                 />
             </Link>
-            {1===1
+            {1===2
                 ? <FaRegCircle
                     className="np-slider-check"
-                    onClick={() => alert('hi')}
+                    onClick={() => toggleVisitedNP(props.npInfo.id)}
                     />
                 : <FaCheckCircle
                     className="np-slider-check"
-                    onClick={() => alert('hi')}
+                    onClick={() => toggleVisitedNP(props.npInfo.id)}
                     />
                 }
-                {1===1
+                {1===2
                 ? <BsBucket
                     className="np-slider-bucket"t
-                    onClick={() => alert('hi')}
+                    onClick={() => toggleBucketNP(props.npInfo.id)}
                     />
                 : <BsBucketFill
                     className="np-slider-bucket"
-                    onClick={() => alert('hi')}
+                    onClick={() => toggleBucketNP(props.npInfo.id)}
                     />
               }
             <Slider {...sliderSettings} className='np-slider'>
@@ -64,4 +68,9 @@ const SliderContainer = (props) => {
     )
 }
 
-export default SliderContainer
+const mapDispatch = (dispatch) => ({
+  toggleBucketNP: id => dispatch( toggleBucketNP(id)),
+  toggleVisitedNP: id => dispatch( toggleVisitedNP(id))
+})
+
+export default connect(null, mapDispatch)(SliderContainer)
