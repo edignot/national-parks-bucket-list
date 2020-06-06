@@ -27,27 +27,27 @@ class App extends Component {
               <NPContainer/>
           </Route>
 
-          <Route exact path='/np/:name' component={NPInfo}/>
-
-          <Route path = '/np'>
+          <Route exact path = '/np'>
               <NPContainer/>
           </Route>
 
-          <Route path = '/bucketlist'>
+          <Route exact path = '/bucketlist'>
               <NPContainer/>
           </Route>
 
-          <Route path = '/visited'>
+          <Route exact path = '/visited'>
               <NPContainer/>
           </Route>
 
-          <Route path = '/map'>
+          <Route exact path = '/map'>
               <Map/>
           </Route>
 
-          <Route path = '/user'>
+          <Route exact path = '/user'>
               <User/>
           </Route>
+
+          <Route path='/np/:name' component={NPInfo}/>
 
           <Route component={NotFound} />
           j
