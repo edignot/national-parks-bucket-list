@@ -24,6 +24,11 @@ class App extends Component {
 
           <Route exact path='/np/:name' component={NPInfo}/>
 
+          <Route exact path = '/explore/search'>
+              <Search/>
+              <NPContainer filter='search results'/>
+          </Route>
+
           <Route exact path = '/explore'>
               <Search/>
               <NPContainer filter='all parks'/>
