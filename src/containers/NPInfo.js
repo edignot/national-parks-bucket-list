@@ -10,6 +10,8 @@ const NPInfo = ({np, user}) => {
             <SliderContainer 
                 images={npInfo.images}
                 id={npInfo.id}
+                visited={npInfo.visited}
+                bucket={npInfo.bucket}
             />
             {npInfo.name}
         </section>

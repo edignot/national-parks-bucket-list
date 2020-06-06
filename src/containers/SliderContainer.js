@@ -10,8 +10,6 @@ import { BsBucket, BsBucketFill } from 'react-icons/bs'
 
 
 const SliderContainer = (props) => {
-    console.log('NPINFO', props.id)
-    console.log('IMAGES', props.images)
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -19,12 +17,6 @@ const SliderContainer = (props) => {
         slidesToShow: 1,
         slidesToScroll: 1
       }
-
-    const imag = [
-        'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-        'https://images.unsplash.com/photo-1481487196290-c152efe083f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-        'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-    ]
     
     const sliderItems = props.images.map(img => {
         return (
@@ -41,24 +33,24 @@ const SliderContainer = (props) => {
                     className="details-back-btn"
                 />
             </Link>
-            {1===2
+            {!props.visited
                 ? <FaRegCircle
                     className="np-slider-check"
-                    onClick={() => toggleVisitedNP(props.npInfo.id)}
+                    onClick={() => props.toggleVisitedNP(props.id)}
                     />
                 : <FaCheckCircle
                     className="np-slider-check"
-                    onClick={() => toggleVisitedNP(props.npInfo.id)}
+                    onClick={() => props.toggleVisitedNP(props.id)}
                     />
                 }
-                {1===2
+                {!props.bucket
                 ? <BsBucket
                     className="np-slider-bucket"t
-                    onClick={() => toggleBucketNP(props.npInfo.id)}
+                    onClick={() => props.toggleBucketNP(props.id)}
                     />
                 : <BsBucketFill
                     className="np-slider-bucket"
-                    onClick={() => toggleBucketNP(props.npInfo.id)}
+                    onClick={() => props.toggleBucketNP(props.id)}
                     />
               }
             <Slider {...sliderSettings} className='np-slider'>
