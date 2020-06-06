@@ -1,7 +1,7 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import { connect } from 'react-redux'
-import { MapTag } from '../components/MapTag'
+import MapTag from './MapTag'
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
 
@@ -14,6 +14,7 @@ const Map = ({np}) => {
               lng={park.longitude}
               id={park.id}
               name={park.name}
+              designation={park.designation}
             />
       )
     })
