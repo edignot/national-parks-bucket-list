@@ -11,7 +11,7 @@ const MapTag = ({name, id, designation, displayNP, visited, bucket}) => {
     return (
       <Link
         className='map-link'
-        to={`np/${name}`}
+        to='np'
         onClick={() => displayNP(id)} 
       >
           {!visited ? <FaRegCircle className='map-tag'/> : <FaCheckCircle className='map-tag'/>}
