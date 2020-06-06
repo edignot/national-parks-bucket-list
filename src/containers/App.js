@@ -17,42 +17,37 @@ class App extends Component {
     const { user, np } = this.props
     return (
       <section className="app-container">
-        {!user.userName && <Redirect to="/login" />}
+        {!user.userName && <Redirect to="/" />}
         {np.length>0 && <Redirect to="/explore" />}
         <Switch>
-          <Route exact path = '/login' component={Login}/>
+          <Route exact path = '/' component={Login}/>
+
+          <Route exact path='/np' component={NPInfo}/>
 
           <Route exact path = '/explore'>
               <Search/>
               <NPContainer/>
           </Route>
 
-          <Route exact path='/np/:name' component={NPInfo}/>
-
-          <Route path = '/np'>
+          <Route exact path = '/bucketlist'>
               <NPContainer/>
           </Route>
 
-          <Route path = '/bucketlist'>
+          <Route exact path = '/visited'>
               <NPContainer/>
           </Route>
 
-          <Route path = '/visited'>
-              <NPContainer/>
-          </Route>
-
-          <Route path = '/map'>
+          <Route exact path = '/map'>
               <Map/>
           </Route>
 
-          <Route path = '/user'>
+          <Route exact path = '/user'>
               <User/>
           </Route>
 
           <Route component={NotFound} />
           j
         </Switch>
-        {/* CHANGE TO LOADING CONDITION FOR NAV */}
         {np.length>0 && <Nav/>}
       </section>
     )

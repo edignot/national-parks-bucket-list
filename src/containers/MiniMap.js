@@ -5,8 +5,8 @@ import MapTag from './MapTag'
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
 
-const Map = ({np}) => {
-    const centr = { lat: Number(np[0].latitude), lng: Number(np[0].longitude)}
+const MiniMap = ({np, lat, lng, id, name, designation, visited, bucket}) => {
+    const centr = { lat: Number(lat), lng: Number(lng)}
     const markers = np.map(park => {
       return (
         <MapTag
@@ -21,15 +21,24 @@ const Map = ({np}) => {
       )
     })
       return (
-        <div style={{ height: '100vh', width: '100vw' }}>
+        <section style={{ height: '100%', width: '100%' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: ''}}
+            bootstrapURLKeys={{ key: '' }}
             center={centr}
-            zoom={7}
+            zoom={15}
           >
             { markers }
+            <MapTag
+              lat={lat}
+              lng={lng}
+              id={id}
+              name={name}
+              designation={designation}
+              visited={visited}
+              bucket={bucket}
+            />
           </GoogleMapReact>
-        </div>
+        </section>
       )
   }
 
@@ -37,4 +46,4 @@ const mapState = state => ({
     np: state.np
 })
   
-export default connect(mapState)(Map)
+export default connect(mapState)(MiniMap)

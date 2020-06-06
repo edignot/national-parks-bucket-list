@@ -41,7 +41,7 @@ const NPCard = ({
                     />
                 }
             <Link 
-                to={`np/${name}${designation}`}
+                to='np'
                 onClick={() => displayNP(id)}
             >
                 <img
@@ -55,7 +55,7 @@ const NPCard = ({
             </Link>
             </div>
             <Link 
-                to={`np/${name}`}
+                to='np'
                 onClick={() => displayNP(id)}
             >
             <h2>{name} {designation}</h2>

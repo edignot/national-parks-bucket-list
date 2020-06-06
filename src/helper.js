@@ -5,12 +5,13 @@ export const cleanNPData = (npData) => {
             designation: np.designation,
             id: np.id,
             states: np.states,
-            longitude: np.longiture,
+            longitude: np.longitude,
             latitude: np.latitude,
             url: np.url,
             description: np.description,
             images: np.images,
             states: np.states,
+            weatherInfo: np.weatherInfo,
             bucket: false,
             visited: false
         }
