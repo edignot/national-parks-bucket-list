@@ -2,16 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 
-const NPInfo = ({np}) => {
+const NPInfo = ({np, user}) => {
+    const npInfo = np.find(park => park.id === user.npID)
     return (
         <section>
-            NP Info
+            {npInfo.name}
         </section>
     )
 }
 
 export const mapState = state => ({
-    np: state.np
+    np: state.np,
+    user: state.user
 })
 
 export default connect(mapState)(NPInfo)
