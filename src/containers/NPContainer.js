@@ -1,11 +1,27 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import NPCard from './NPCard'
 
-const NPContainer = () => {
+const NPContainer = ({np}) => {
+    const parks = np.map(park => {
+        return (
+            <NPCard
+                {...park}
+                key={park.id}
+            />
+        )
+    })
     return (
-        <section className='np-container'>
-            <h2>np container</h2>
+        <section>
+            <section className='np-container'>
+            { parks }
+            </section>
         </section>
     )
 }
 
-export default NPContainer
+export const mapState = state => ({
+    np: state.np
+})
+
+export default connect(mapState)(NPContainer)

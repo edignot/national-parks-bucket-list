@@ -8,20 +8,78 @@ $break5: 1280px;
     .nav-container {
         justify-content: space-evenly;
     }
+    .login-wrapper {
+        width: 70%;
+        .login-header {
+            font-size: 2.5rem;
+        }
+    }
+    .np-container {
+        grid-template: auto / repeat(1, 1fr);
+        width: 70%;
+    }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 80%;
+        }
+    }
 }
 
 @media (min-width: $break2) {
-    
+    .login-wrapper {
+        width: 60%;
+        .login-header {
+            font-size: 2.8rem;
+        }
+    }
+    .np-container {
+        grid-template: auto / repeat(2, 1fr);
+        width: 90%;
+    }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 70%;
+        }
+    }
 }
 
 @media (min-width: $break3) {
-   
+    .login-wrapper {
+        width: 50%;
+    }
+    .np-container {
+        grid-template: auto / repeat(2, 1fr);
+        width: 80%;
+    }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 60%;
+        }
+    }
 }
 
 @media (min-width: $break4) {
-   
+    .login-wrapper {
+        width: 40%;
+    }
+    .np-container {
+        grid-template: auto / repeat(3, 1fr);
+        width: 90%;
+    }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 50%;
+        }
+    }
 }
 
 @media (min-width: $break5) {
-   
+    .login-wrapper {
+        width: 30%;
+    }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 40%;
+        }
+    }
 }
