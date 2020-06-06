@@ -6,7 +6,7 @@ const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
 
 const Map = ({np}) => {
-    console.log(np)
+    const centr = { lat: Number(np[0].latitude), lng: Number(np[0].longitude)}
     const markers = np.map(park => {
       return (
         <MapTag
@@ -18,11 +18,11 @@ const Map = ({np}) => {
       )
     })
       return (
-        <div style={{ height: '300px', width: '300px' }}>
+        <div style={{ height: '100vh', width: '100vw' }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: '' }}
-            center={{lat: 59.95, lng: 30.33}}
-            zoom={16}
+            center={centr}
+            zoom={7}
           >
             { markers }
             {/* <MapTargetTag
