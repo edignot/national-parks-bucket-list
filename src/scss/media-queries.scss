@@ -18,6 +18,11 @@ $break5: 1280px;
         grid-template: auto / repeat(1, 1fr);
         width: 70%;
     }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 80%;
+        }
+    }
 }
 
 @media (min-width: $break2) {
@@ -31,6 +36,11 @@ $break5: 1280px;
         grid-template: auto / repeat(2, 1fr);
         width: 90%;
     }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 70%;
+        }
+    }
 }
 
 @media (min-width: $break3) {
@@ -40,6 +50,11 @@ $break5: 1280px;
     .np-container {
         grid-template: auto / repeat(2, 1fr);
         width: 80%;
+    }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 60%;
+        }
     }
 }
 
@@ -51,10 +66,20 @@ $break5: 1280px;
         grid-template: auto / repeat(3, 1fr);
         width: 90%;
     }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 50%;
+        }
+    }
 }
 
 @media (min-width: $break5) {
     .login-wrapper {
         width: 30%;
+    }
+    .search-wrapper {
+        .search-item-wrapper {
+            width: 40%;
+        }
     }
 }

@@ -15,7 +15,6 @@ export const user = ( state = userTemplate, action ) => {
             return userTemplate
         case 'DISPLAY_NP':
             return {...state, npID: action.id}
-                // return userTemplate
         default:
             return state
     }

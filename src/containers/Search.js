@@ -44,49 +44,60 @@ class Search extends Component {
 
     render () {
         return (
-            <section>
-                <div className='search-item'>
-                    <label htmlFor="stateCode">Change state:</label>
-                    <input
-                        name='stateCode'
-                        type='text'
-                        value={this.state.stateCode}
-                        placeholder="e.g. CO"
-                        onChange={this.handleChange} 
-                    />
+            <section className='search-wrapper'>
+                <div className='search-item-wrapper'>
+                    <div className='search-item'>
+                        <label htmlFor="stateCode">Change state:</label>
+                        <input
+                            name='stateCode'
+                            type='text'
+                            value={this.state.stateCode}
+                            placeholder="e.g. CO"
+                            onChange={this.handleChange} 
+                        />
+                    </div>
                     <button
+                        className='search-btn'
                         disabled={!this.isStateCodeValid('stateCode')}
                         onClick={this.changeState}
                     >
                         <FaSearchLocation/>
                     </button>
                 </div>
-                <div className='search-item'>
-                    <label htmlFor="stateCodeAdd">Add state:</label>
-                    <input
-                        name='stateCodeAdd'
-                        type='text'
-                        value={this.state.stateCodeAdd}
-                        placeholder="e.g. CO ( one at a time... )"
-                        onChange={this.handleChange} 
-                    />
+                <div className='search-item-wrapper'>
+                    <div className='search-item'>
+                        <label htmlFor="stateCodeAdd">Add state:</label>
+                        <input
+                            name='stateCodeAdd'
+                            type='text'
+                            value={this.state.stateCodeAdd}
+                            placeholder="e.g. CO ( one at a time... )"
+                            onChange={this.handleChange} 
+                        />
+                    </div>
                     <button
+                        className='search-btn'
                         disabled={!this.isStateCodeValid('stateCodeAdd')}
                         onClick={this.addState}
                     >
                         <FaSearchLocation/>
                     </button>
+                    
                 </div>
-                <div className='search-item'>
-                    <label htmlFor="keyword">Search by National Park title:</label>
-                    <input
-                        name='keyword'
-                        type='text'
-                        value={this.state.keyword}
-                        placeholder="e.g. Monument"
-                        onChange={this.handleChange} 
-                    />
-                    <button>
+                <div className='search-item-wrapper'>
+                    <div className='search-item'>
+                        <label htmlFor="keyword">Search by National Park title:</label>
+                        <input
+                            name='keyword'
+                            type='text'
+                            value={this.state.keyword}
+                            placeholder="e.g. Monument"
+                            onChange={this.handleChange} 
+                        />
+                    </div>
+                    <button
+                        className='search-btn'
+                    >
                         <FaSearch/>
                     </button>
                 </div>

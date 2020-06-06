@@ -102,7 +102,6 @@ html {
   }
 }
 
-// LOADING
 .loading-container {
   .bucket-empty,
   .bucket-full {
@@ -110,6 +109,7 @@ html {
  }
 }
 
+// NP
 .np-container {
   width: 90%;
   @include container-grid;
@@ -154,5 +154,38 @@ html {
       }
     }
 }
+
+// SEARCH
+
+.search-wrapper {
+  width: 100%;
+  @include form;
+  margin: auto;
+  .search-item-wrapper {
+    display: flex;
+    width: 90%;
+    .search-item {
+      @include form-item;
+      input {
+        @include box-shadow-radius;
+        @include form-input;
+        font-weight: 300;
+        border-radius: 7px 0 0 7px;
+      }
+      label {
+        color: $background-dark;
+        font-weight: 300;
+      }
+    }
+    .search-btn {
+      @include button($background-dark);
+      padding: 7px;
+      font-size: 1.2rem;
+      border-radius: 0 7px 7px 0;
+    }
+  }
+}
+
+
 
  @import './media-queries';

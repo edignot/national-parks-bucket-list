@@ -13,9 +13,11 @@ const NPContainer = ({np}) => {
         )
     })
     return (
-        <section className='np-container'>
+        <section>
             <Search/>
+            <section className='np-container'>
             { parks }
+            </section>
         </section>
     )
 }
