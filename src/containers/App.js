@@ -10,7 +10,7 @@ import NPInfo from './NPInfo'
 import User from './User'
 import Map from './Map'
 import Search from './Search'
-import ExploreContainer from './ExploreContainer'
+
 
 class App extends Component {
   render() {
@@ -22,7 +22,7 @@ class App extends Component {
         <Switch>
           <Route exact path = '/' component={Login}/>
 
-          <Route exact path='/np' component={NPInfo}/>
+          <Route exact path='/np/:name' component={NPInfo}/>
 
           <Route exact path = '/explore'>
               <Search/>

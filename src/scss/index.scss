@@ -22,6 +22,7 @@ html {
 
 .login-container {
   @include background;
+  min-height: 100vh;
   .login-wrapper {
      margin: auto;
     .login-header {
@@ -260,6 +261,53 @@ html {
   background-color: $background-medium;
   height: auto;
 }
+
+.user-container {
+  @include background;
+  min-height: 100vh;
+  .user-wrapper {
+    margin: auto;
+    .user-header {
+      font-weight: 200;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .user-info {
+      width: 100%;
+      position: relative;
+      @include box-shadow-radius;
+      @include form;
+      margin: auto;
+      padding-top: 50px; 
+      p {
+        font-size: 1.4rem;
+        color: $font-dark;
+        margin-top: 15px;
+        span {
+          font-weight: 400;
+        }
+      }
+      .logout-btn {
+        margin-top: 20px;
+        @include button($background-dark);
+      }
+      .user-feature {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.user-wrapper {
+  width: 80%;
+  .user-header {
+    font-size: 2rem;
+  }
+}
+
 
 
 

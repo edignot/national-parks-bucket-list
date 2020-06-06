@@ -117,8 +117,6 @@ class Login extends Component {
           </form>
         </section> : 
         <section className='loading-wrapper'>
-          {/* ADD ANIMATION, FILL THE BUCKET */}
-          {/* <BsBucketFill className='bucket-full'/> */}
           <p className='loading-msg'>WAIT... FILLING <BsBucket/></p>
         </section>
         }

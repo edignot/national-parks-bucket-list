@@ -1,20 +1,47 @@
 import React from 'react'
 import { logout, deleteNP } from '../actions'
 import { connect } from 'react-redux'
+import { BsBucketFill } from 'react-icons/bs'
+import { FaCheckCircle } from 'react-icons/fa'
 import '../scss/index.scss'
 
 const User = ({logout, deleteNP, user}) => {
     return (
-        <section>
-            <p>Username: {user.userName}</p>
-            <p>Email: {user.email}</p>
-            <p>State: {user.stateCode.toUpperCase()}</p>
-            <button
-                className='logout-btn' 
-                onClick={() => {logout(); deleteNP()}}
-            >
-                LOGOUT
-            </button>
+        <section className='user-container'>
+            <section className='user-wrapper'>
+                <h1 className='user-header'>
+                National Parks <BsBucketFill/> List
+                </h1>
+                <div className='user-info'>
+                    <p>Username: 
+                        <span> {user.userName}</span>
+                    </p>
+                    <p>Email: 
+                        <span> {user.email}</span>
+                    </p>
+                    <p>State: 
+                        <span> {user.stateCode.toUpperCase()}</span>
+                    </p>
+                    <div className='user-feature'>
+                        <div>
+                            <BsBucketFill className='user-icon'/>
+                        </div>
+                        <p>0</p>
+                    </div>
+                    <div className='user-feature'>
+                        <div>
+                            <FaCheckCircle className='user-icon'/>
+                        </div>
+                        <p>4</p>
+                    </div>
+                    <button
+                        className='logout-btn' 
+                        onClick={() => {logout(); deleteNP()}}
+                    >
+                        LOGOUT
+                    </button>
+                </div>
+            </section>
         </section>
     )
 }
