@@ -9,7 +9,15 @@ import { FaArrowCircleLeft, FaRegCircle, FaCheckCircle } from 'react-icons/fa'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 
 
-const SliderContainer = (props) => {
+const SliderContainer = ({
+    id, 
+    images, 
+    visited, 
+    bucket, 
+    toggleBucketNP, 
+    toggleVisitedNP
+}) => {
+    
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -18,7 +26,7 @@ const SliderContainer = (props) => {
         slidesToScroll: 1
       }
     
-    const sliderItems = props.images.map(img => {
+    const sliderItems = images.map(img => {
         return (
           <div>
             <img src={img.url} alt="spot" className="slider-img"/>
@@ -33,24 +41,24 @@ const SliderContainer = (props) => {
                     className="details-back-btn"
                 />
             </Link>
-            {!props.visited
+            {!visited
                 ? <FaRegCircle
                     className="np-slider-check"
-                    onClick={() => props.toggleVisitedNP(props.id)}
+                    onClick={() => toggleVisitedNP(id)}
                     />
                 : <FaCheckCircle
                     className="np-slider-check"
-                    onClick={() => props.toggleVisitedNP(props.id)}
+                    onClick={() => toggleVisitedNP(id)}
                     />
                 }
-                {!props.bucket
+                {!bucket
                 ? <BsBucket
                     className="np-slider-bucket"t
-                    onClick={() => props.toggleBucketNP(props.id)}
+                    onClick={() => toggleBucketNP(id)}
                     />
                 : <BsBucketFill
                     className="np-slider-bucket"
-                    onClick={() => props.toggleBucketNP(props.id)}
+                    onClick={() => toggleBucketNP(id)}
                     />
               }
             <Slider {...sliderSettings} className='np-slider'>
