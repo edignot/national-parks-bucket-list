@@ -9,19 +9,19 @@ export const changeState = np => ({
     np
 })
 
-export const deleteNP = np => ({
+export const deleteNP = id => ({
     type: 'DELETE_NP',
-    np
+    id
 })
 
-export const toggleBucketNP = np => ({
+export const toggleBucketNP = id => ({
     type: 'TOGGLE_BUCKET_NP',
-    np
+    id
 })
 
-export const toggleVisitedNP = np => ({
+export const toggleVisitedNP = id => ({
     type: 'TOGGLE_VISITED_NP',
-    np
+    id
 })
 
 // USER
