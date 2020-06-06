@@ -20,8 +20,6 @@ html {
    background-color: $background-light;
  }
 
-
- // LOGIN
 .login-container {
   @include background;
   .login-wrapper {
@@ -109,7 +107,6 @@ html {
  }
 }
 
-// NP
 .np-container {
   width: 90%;
   @include container-grid;
@@ -154,8 +151,6 @@ html {
       }
     }
 }
-
-// SEARCH
 
 .search-wrapper {
   width: 100%;
@@ -209,7 +204,7 @@ html {
       }
       .slider-img {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
         object-fit: cover;
       }
 }

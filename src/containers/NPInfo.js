@@ -5,15 +5,22 @@ import SliderContainer from './SliderContainer'
 
 const NPInfo = ({np, user}) => {
     const npInfo = np.find(park => park.id === user.npID)
+    const { 
+        images, 
+        id, 
+        visited, 
+        bucket, 
+        name } = npInfo
+        
     return (
         <section className='np-info-container'>
             <SliderContainer 
-                images={npInfo.images}
-                id={npInfo.id}
-                visited={npInfo.visited}
-                bucket={npInfo.bucket}
+                images={images}
+                id={id}
+                visited={visited}
+                bucket={bucket}
             />
-            {npInfo.name}
+            {name}
         </section>
     )
 }
