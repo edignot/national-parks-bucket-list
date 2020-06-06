@@ -282,6 +282,7 @@ html {
       p {
         font-size: 1.4rem;
         color: $font-dark;
+        margin-top: 15px;
         span {
           font-weight: 400;
         }
@@ -289,6 +290,12 @@ html {
       .logout-btn {
         margin-top: 20px;
         @include button($background-dark);
+      }
+      .user-feature {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
       }
     }
   }

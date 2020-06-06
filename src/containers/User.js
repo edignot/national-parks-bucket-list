@@ -2,6 +2,7 @@ import React from 'react'
 import { logout, deleteNP } from '../actions'
 import { connect } from 'react-redux'
 import { BsBucketFill } from 'react-icons/bs'
+import { FaCheckCircle } from 'react-icons/fa'
 import '../scss/index.scss'
 
 const User = ({logout, deleteNP, user}) => {
@@ -21,6 +22,18 @@ const User = ({logout, deleteNP, user}) => {
                     <p>State: 
                         <span> {user.stateCode.toUpperCase()}</span>
                     </p>
+                    <div className='user-feature'>
+                        <div>
+                            <BsBucketFill className='user-icon'/>
+                        </div>
+                        <p>0</p>
+                    </div>
+                    <div className='user-feature'>
+                        <div>
+                            <FaCheckCircle className='user-icon'/>
+                        </div>
+                        <p>4</p>
+                    </div>
                     <button
                         className='logout-btn' 
                         onClick={() => {logout(); deleteNP()}}
