@@ -1,20 +1,34 @@
 import React from 'react'
 import { logout, deleteNP } from '../actions'
 import { connect } from 'react-redux'
+import { BsBucketFill } from 'react-icons/bs'
 import '../scss/index.scss'
 
 const User = ({logout, deleteNP, user}) => {
     return (
-        <section>
-            <p>Username: {user.userName}</p>
-            <p>Email: {user.email}</p>
-            <p>State: {user.stateCode.toUpperCase()}</p>
-            <button
-                className='logout-btn' 
-                onClick={() => {logout(); deleteNP()}}
-            >
-                LOGOUT
-            </button>
+        <section className='user-container'>
+            <section className='user-wrapper'>
+                <h1 className='user-header'>
+                National Parks <BsBucketFill/> List
+                </h1>
+                <div className='user-info'>
+                    <p>Username: 
+                        <span> {user.userName}</span>
+                    </p>
+                    <p>Email: 
+                        <span> {user.email}</span>
+                    </p>
+                    <p>State: 
+                        <span> {user.stateCode.toUpperCase()}</span>
+                    </p>
+                    <button
+                        className='logout-btn' 
+                        onClick={() => {logout(); deleteNP()}}
+                    >
+                        LOGOUT
+                    </button>
+                </div>
+            </section>
         </section>
     )
 }
