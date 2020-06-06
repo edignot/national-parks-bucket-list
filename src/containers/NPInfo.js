@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import SliderContainer from '../components/SliderContainer'
+import SliderContainer from './SliderContainer'
 
 
 const NPInfo = ({np, user}) => {

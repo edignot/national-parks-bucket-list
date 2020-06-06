@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { FaArrowCircleLeft } from 'react-icons/fa'
+import { FaArrowCircleLeft, FaRegCircle, FaCheckCircle } from 'react-icons/fa'
+import { BsBucket, BsBucketFill } from 'react-icons/bs'
 
 
 const SliderContainer = (props) => {
@@ -36,6 +37,26 @@ const SliderContainer = (props) => {
                     className="details-back-btn"
                 />
             </Link>
+            {1===1
+                ? <FaRegCircle
+                    className="np-slider-check"
+                    onClick={() => alert('hi')}
+                    />
+                : <FaCheckCircle
+                    className="np-slider-check"
+                    onClick={() => alert('hi')}
+                    />
+                }
+                {1===1
+                ? <BsBucket
+                    className="np-slider-bucket"t
+                    onClick={() => alert('hi')}
+                    />
+                : <BsBucketFill
+                    className="np-slider-bucket"
+                    onClick={() => alert('hi')}
+                    />
+              }
             <Slider {...sliderSettings} className='np-slider'>
               {sliderItems}
             </Slider>
