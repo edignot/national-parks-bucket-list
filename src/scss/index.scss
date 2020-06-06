@@ -209,6 +209,38 @@ html {
       }
 }
 
+.np-info-container {
+  padding-bottom: 150px;
+}
+
+.np-info-map-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.np-info-wrapper {
+  width: 50%;
+  background-color: $background-medium;
+  padding: 50px;
+  .np-feature {
+    margin-top: 15px;
+    display: flex;
+    p,
+    a {
+      font-weight: 400;
+      font-size: 1.4rem;
+    }
+    .feature-icon {
+      font-size: 40px;
+      margin-right: 10px;
+    }
+  }
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+}
+
 .map-link {
   text-decoration: none;
 }
@@ -223,7 +255,10 @@ html {
 }
 
 .np-info-map {
-  width: 500px;
+  padding: 50px;
+  width: 50%;
+  background-color: $background-medium;
+  height: auto;
 }
 
 
