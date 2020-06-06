@@ -26,15 +26,15 @@ class App extends Component {
 
           <Route exact path = '/explore'>
               <Search/>
-              <NPContainer/>
+              <NPContainer filter='all parks'/>
           </Route>
 
           <Route exact path = '/bucketlist'>
-              <NPContainer/>
+              <NPContainer filter='bucket list'/>
           </Route>
 
           <Route exact path = '/visited'>
-              <NPContainer/>
+              <NPContainer filter='visited'/>
           </Route>
 
           <Route exact path = '/map'>
