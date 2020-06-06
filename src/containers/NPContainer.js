@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import NPCard from './NPCard'
-import Search from './Search'
 
 const NPContainer = ({np}) => {
     const parks = np.map(park => {
@@ -14,7 +13,6 @@ const NPContainer = ({np}) => {
     })
     return (
         <section>
-            <Search/>
             <section className='np-container'>
             { parks }
             </section>

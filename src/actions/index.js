@@ -1,4 +1,3 @@
-// NP
 export const addAllNP = np => ({
     type: 'ADD_ALL_NP',
     np
@@ -24,7 +23,6 @@ export const toggleVisitedNP = id => ({
     id
 })
 
-// USER
 export const login = user => ({
     type: 'LOGIN',
     user

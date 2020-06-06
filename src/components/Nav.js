@@ -11,10 +11,10 @@ const Nav = () => {
                 <FaSearch className='nav-icon'/>
                 <p>EXPLORE</p>
             </Link>
-            <Link to='np' className='nav-item'>
+            {/* <Link to='np' className='nav-item'>
                 <FaListAlt className='nav-icon'/>
                 <p>ALL PARKS</p>
-            </Link>
+            </Link> */}
             <Link to='bucketlist' className='nav-item'>
                 <BsBucketFill className='nav-icon'/>
                 <p>BUCKET LIST</p>
