@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import SliderContainer from './SliderContainer'
+import MiniMap from './MiniMap'
 
 
 const NPInfo = ({np, user}) => {
@@ -10,7 +11,11 @@ const NPInfo = ({np, user}) => {
         id, 
         visited, 
         bucket, 
-        name } = npInfo
+        name,
+        designation,
+        latitude,
+        longitude
+     } = npInfo
         
     return (
         <section className='np-info-container'>
@@ -21,6 +26,17 @@ const NPInfo = ({np, user}) => {
                 bucket={bucket}
             />
             {name}
+            <div className='np-info-map'>
+                <MiniMap 
+                    lat={latitude}
+                    lng={longitude}
+                    id={id}
+                    name={name}
+                    designation={designation}
+                    visited={visited}
+                    bucket={bucket}
+                />
+            </div>
         </section>
     )
 }
