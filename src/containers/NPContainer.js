@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import NPCard from '../components/NPCard'
+import NPCard from './NPCard'
 import Search from './Search'
 
 const NPContainer = ({np}) => {

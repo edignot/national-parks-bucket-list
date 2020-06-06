@@ -6,6 +6,10 @@ export const np = ( state = [], action) => {
             return [...action.np]
         case 'DELETE_NP':
             return []
+        case 'TOGGLE_BUCKET_NP':
+            return []
+        case 'TOGGLE_VISITED_NP':
+            return []
         default: 
             return state
     }

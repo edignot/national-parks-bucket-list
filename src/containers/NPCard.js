@@ -1,33 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { displayNP } from '../actions'
+import { displayNP, toggleBucketNP, toggleVisitedNP } from '../actions'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
 
-const NPCard = ({id, name, designation, images, displayNP}) => {
+const NPCard = ({
+    id, 
+    name, 
+    designation, 
+    images, 
+    displayNP,
+    toggleBucketNP,
+    toggleVisitedNP, 
+    visited, 
+    bucket
+}) => {
     const randomImg = images[Math.floor(Math.random() * images.length)]
     return (
         <section className='np-card-wrapper'>
             <div className="np-card-img-wrapper">
-                {id
+                {!visited
                 ? <FaRegCircle
                     className="np-card-check"
-                    onClick={() => alert('hi')}
+                    onClick={() => toggleVisitedNP(id)}
                     />
                 : <FaCheckCircle
                     className="np-card-check"
-                    onClick={() => alert('hi')}
+                    onClick={() => toggleVisitedNP(id)}
                     />
                 }
-                {id
+                {!bucket
                 ? <BsBucket
-                    className="np-card-bucket"
-                    onClick={() => alert('hi')}
+                    className="np-card-bucket"t
+                    onClick={() => toggleBucketNP(id)}
                     />
                 : <BsBucketFill
                     className="np-card-bucket"
-                    onClick={() => alert('hi')}
+                    onClick={() => toggleBucketNP(id)}
                     />
                 }
             <Link 
@@ -55,7 +65,9 @@ const NPCard = ({id, name, designation, images, displayNP}) => {
 }
 
 const mapDispatch = (dispatch) => ({
-    displayNP: id => dispatch( displayNP(id))
+    displayNP: id => dispatch( displayNP(id)),
+    toggleBucketNP: id => dispatch( toggleBucketNP(id)),
+    toggleVisitedNP: id => dispatch( toggleVisitedNP(id))
 })
 
 export default connect(null, mapDispatch)(NPCard)

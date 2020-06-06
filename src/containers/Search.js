@@ -99,7 +99,7 @@ class Search extends Component {
                         className='search-btn'
                     >
                         <FaSearch/>
-                    </button>
+                        </button>
                 </div>
             </section>
         )
