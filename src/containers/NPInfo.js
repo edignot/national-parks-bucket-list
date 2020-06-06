@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import SliderContainer from '../components/SliderContainer'
 
 
 const NPInfo = ({np, user}) => {
     const npInfo = np.find(park => park.id === user.npID)
     return (
-        <section>
+        <section className='np-info-container'>
+            <SliderContainer images={np.images}/>
             {npInfo.name}
         </section>
     )
