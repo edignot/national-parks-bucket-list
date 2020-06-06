@@ -1,9 +1,11 @@
 export const np = ( state = [], action) => {
     switch (action.type) {
         case 'ADD_ALL_NP':
+            
             return [...state, ...action.np]
         case 'CHANGE_STATE':
-            return [...action.np]
+            let saved = state.filter(i => (i.visited || i.bucket))
+            return [...saved, ...action.np]
         case 'DELETE_NP':
             return []
         case 'TOGGLE_BUCKET_NP':

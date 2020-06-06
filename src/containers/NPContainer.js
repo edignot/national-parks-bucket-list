@@ -43,7 +43,7 @@ const NPContainer = ({np, filter}) => {
     return (
         <section>
             <h2 className='np-container-title'>{filter}</h2>
-            {!parks.lengt && notFound}
+            {!parks.length && notFound}
             <section className='np-container'>
             { parks }
             </section>
