@@ -15,6 +15,8 @@ const Map = ({np}) => {
               id={park.id}
               name={park.name}
               designation={park.designation}
+              visited={park.visited}
+              bucket={park.bucket}
             />
       )
     })

@@ -1,18 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaMountain } from 'react-icons/fa'
+import { BsBucket, BsBucketFill } from 'react-icons/bs'
+import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
 import { connect } from 'react-redux'
 import { displayNP } from '../actions'
 
 
-const MapTag = (props) => {
+const MapTag = ({name, id, designation, displayNP, visited, bucket}) => {
     return (
       <Link
-        to={`np/${props.name}`}
-        onClick={() => props.displayNP(props.id)} 
+        className='map-link'
+        to={`np/${name}`}
+        onClick={() => displayNP(id)} 
       >
-        <FaMountain className='map-tag'/>
-        <h2>{props.name} {props.designation}</h2>
+          {!visited ? <FaRegCircle className='map-tag'/> : <FaCheckCircle className='map-tag'/>}
+          {!bucket ? <BsBucket className='map-tag'/> : <BsBucketFill className='map-tag'/>}
+        <h2 className='map-title'>{name} {designation}</h2>
       </Link>
     )
 }

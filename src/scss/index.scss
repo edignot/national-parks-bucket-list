@@ -209,6 +209,19 @@ html {
       }
 }
 
+.map-link {
+  text-decoration: none;
+}
+
+.map-tag {
+  font-size: 1.4rem;
+}
+
+.map-title {
+  color: $font-dark;
+  font-weight: 400;
+}
+
 
 
  @import './media-queries';
