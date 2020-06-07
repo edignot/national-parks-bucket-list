@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { displayNP, toggleBucketNP, toggleVisitedNP } from '../actions'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
+import { backupImg } from '../constants'
 
 const NPCard = ({
     id, 
@@ -48,7 +49,7 @@ const NPCard = ({
                     className="np-card-img"
                     src={randomImg ?
                          randomImg.url : 
-                         'https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'}
+                         backupImg}
                     alt={name}
                     width="500"
                 />

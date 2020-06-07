@@ -34,10 +34,8 @@ const NPContainer = ({np, filter, sesion}) => {
         npFiltered = np
     } else if (filter === 'search results') {
         npFiltered = np.filter(park => {
-            if (park.name.toUpperCase().includes(sesion.toUpperCase()) || 
-            park.designation.toUpperCase().includes(sesion.toUpperCase())) {
-                return park
-            }
+            return (park.name.toUpperCase().includes(sesion.toUpperCase()) || 
+            park.designation.toUpperCase().includes(sesion.toUpperCase()))
         })
         notFound = (
             <div className='not-found-wrapper'>

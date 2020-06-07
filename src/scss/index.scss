@@ -211,6 +211,16 @@ html {
   }
 }
 
+.search-loading-container {
+  width: 100%;
+  @include background;
+  min-height: 100vh;
+  p {
+    margin: auto;
+    font-size: 3rem;
+  }
+}
+
 .slider-container {
       position: relative;
       width: 100vw;
