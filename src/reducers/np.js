@@ -3,7 +3,8 @@ import _ from 'lodash'
 export const np = ( state = [], action) => {
     switch (action.type) {
         case 'ADD_ALL_NP':
-            let filtered = _.unionBy(state, action.np, 'id');
+            let stateCopy = [...state]
+            let filtered = _.unionBy(stateCopy, action.np, 'id')
             return [...filtered]
         case 'CHANGE_STATE':
             let saved = state.filter(i => (i.visited || i.bucket))
