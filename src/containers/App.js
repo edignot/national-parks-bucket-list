@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import { withRouter } from 'react-router'
 import NotFound from '../components/NotFound'
 import Nav from '../components/Nav'
 import Login from './Login'
@@ -24,17 +23,22 @@ class App extends Component {
 
           <Route exact path='/np/:name' component={NPInfo}/>
 
+          <Route exact path = '/explore/search'>
+              <Search/>
+              <NPContainer filter='search results'/>
+          </Route>
+
           <Route exact path = '/explore'>
               <Search/>
-              <NPContainer/>
+              <NPContainer filter='all parks'/>
           </Route>
 
           <Route exact path = '/bucketlist'>
-              <NPContainer/>
+              <NPContainer filter='bucket list'/>
           </Route>
 
           <Route exact path = '/visited'>
-              <NPContainer/>
+              <NPContainer filter='visited'/>
           </Route>
 
           <Route exact path = '/map'>

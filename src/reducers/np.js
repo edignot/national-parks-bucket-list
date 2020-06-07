@@ -1,9 +1,14 @@
+import _ from 'lodash'
+
 export const np = ( state = [], action) => {
     switch (action.type) {
         case 'ADD_ALL_NP':
-            return [...state, ...action.np]
+            let stateCopy = [...state]
+            let filtered = _.unionBy(stateCopy, action.np, 'id')
+            return [...filtered]
         case 'CHANGE_STATE':
-            return [...action.np]
+            let saved = state.filter(i => (i.visited || i.bucket))
+            return [...saved, ...action.np]
         case 'DELETE_NP':
             return []
         case 'TOGGLE_BUCKET_NP':
@@ -14,6 +19,12 @@ export const np = ( state = [], action) => {
         case 'TOGGLE_VISITED_NP':
             return state.map(i => {
                 (i.id === action.id) && (i.visited = !i.visited)
+                return i
+            })
+        case 'ADD_NOTE':
+            // PUSH NOTE
+            return state.map(i => {
+                (i.id === action.note.id) && (i.visited = !i.visited)
                 return i
             })
         default: 

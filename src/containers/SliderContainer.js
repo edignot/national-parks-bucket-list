@@ -28,7 +28,7 @@ const SliderContainer = ({
     
     const sliderItems = images.map(img => {
         return (
-          <div>
+          <div key={img.url}>
             <img src={img.url} alt="spot" className="slider-img"/>
           </div>
         )

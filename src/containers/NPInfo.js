@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import SliderContainer from './SliderContainer'
 import MiniMap from './MiniMap'
+import NoteContainer from './NoteContainer'
 import { AiFillInfoCircle } from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { IoIosPartlySunny } from 'react-icons/io'
@@ -73,7 +74,8 @@ const NPInfo = ({np, user}) => {
                         bucket={bucket}
                     />
                 </div>
-            </section>       
+            </section>    
+            <NoteContainer/>  
         </section>
     )
 }

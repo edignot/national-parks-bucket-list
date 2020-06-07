@@ -5,7 +5,9 @@ import { BsBucketFill } from 'react-icons/bs'
 import { FaCheckCircle } from 'react-icons/fa'
 import '../scss/index.scss'
 
-const User = ({logout, deleteNP, user}) => {
+const User = ({logout, deleteNP, user, np}) => {
+    const visitedAmount = np.filter(park => park.visited)
+    const bucketAmount = np.filter(park => park.bucket)
     return (
         <section className='user-container'>
             <section className='user-wrapper'>
@@ -26,13 +28,13 @@ const User = ({logout, deleteNP, user}) => {
                         <div>
                             <BsBucketFill className='user-icon'/>
                         </div>
-                        <p>0</p>
+                    <p>{bucketAmount.length}</p>
                     </div>
                     <div className='user-feature'>
                         <div>
                             <FaCheckCircle className='user-icon'/>
                         </div>
-                        <p>4</p>
+                        <p>{visitedAmount.length}</p>
                     </div>
                     <button
                         className='logout-btn' 
@@ -47,7 +49,8 @@ const User = ({logout, deleteNP, user}) => {
 }
 
 const mapState = state => ({
-    user: state.user
+    user: state.user,
+    np: state.np
 })
 
 const mapDispatch = dispatch => ({

@@ -108,11 +108,40 @@ html {
  }
 }
 
+.np-container-title {
+  color: $font-dark;
+  font-size: 3rem;
+  background-color: $background-medium;
+  padding: 10px;
+  text-align: center;
+}
+
 .np-container {
   width: 90%;
   @include container-grid;
-  background-color: $background-light;
   padding: 50px 0 150px;
+}
+
+.not-found-wrapper {
+  margin: auto;
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .not-found-msg {
+    margin-top: 30px;
+    width: 100%;
+    color: $font-dark;
+    font-size: 2rem;
+    span {
+      font-weight: 400;
+      color: $font-dark;
+    }
+  }
+  .not-found-icon {
+    font-size: 100px;
+    align-self: center;
+  }
 }
 
 .np-card-wrapper {
@@ -179,6 +208,16 @@ html {
       font-size: 1.2rem;
       border-radius: 0 7px 7px 0;
     }
+  }
+}
+
+.search-loading-container {
+  width: 100%;
+  @include background;
+  min-height: 100vh;
+  p {
+    margin: auto;
+    font-size: 3rem;
   }
 }
 
@@ -305,6 +344,37 @@ html {
   width: 80%;
   .user-header {
     font-size: 2rem;
+  }
+}
+
+.note-container {
+  background-color: $background-light;
+  padding: 50px;
+  h2,
+  li {
+    color: $font-dark;
+    list-style: none;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+.note-form {
+  color: $font-dark;
+  width: 100%;
+  @include form;
+  @include box-shadow-radius;
+  margin: auto;
+  margin-top: 30px;
+  textarea {
+    width: 100%;
+    resize: none;
+    color: $font-dark;
+    font-size: 1.4rem;
+  }
+  .add-note-btn {
+    @include button($background-dark);
+    margin-top: 20px;
   }
 }
 
