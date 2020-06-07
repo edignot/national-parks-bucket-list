@@ -182,7 +182,8 @@ html {
         border-radius: 7px 7px 0 0;
       }
       .np-card-bucket,
-      .np-card-check {
+      .np-card-check,
+      .np-card-notes {
         font-size: 3rem;
         @include icon-on-img;
         @include icon-hover;
@@ -190,6 +191,9 @@ html {
       }
       .np-card-bucket {
         left: 10px;
+      }
+      .np-card-notes {
+        right: 60px;
       }
     }
     .np-card-btn {
