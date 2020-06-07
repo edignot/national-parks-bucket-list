@@ -10,7 +10,6 @@ import User from './User'
 import Map from './Map'
 import Search from './Search'
 
-
 class App extends Component {
   render() {
     const { user, np } = this.props
@@ -64,3 +63,11 @@ export const mapState = state => ({
 })
 
 export default connect(mapState)(App)
+
+// proptypes
+// react icons color
+// google maps api key 
+
+
+
+

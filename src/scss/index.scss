@@ -141,6 +141,9 @@ html {
   .not-found-icon {
     font-size: 100px;
     align-self: center;
+    background-color: $background-medium;
+    padding: 10px;
+    @include box-shadow-radius;
   }
   .add-parks-btn {
     @include button($background-dark);
