@@ -15,7 +15,8 @@ const NPCard = ({
     toggleBucketNP,
     toggleVisitedNP, 
     visited, 
-    bucket
+    bucket,
+    states
 }) => {
     const randomImg = images[Math.floor(Math.random() * images.length)]
     return (
@@ -55,11 +56,13 @@ const NPCard = ({
                 />
             </Link>
             </div>
-            <Link 
+            <Link
+                className='np-card-btn' 
                 to={`/np/${name}`}
                 onClick={() => displayNP(id)}
             >
             <h2>{name} {designation}</h2>
+            <p>{states}</p>
             </Link>
         </section>
     )

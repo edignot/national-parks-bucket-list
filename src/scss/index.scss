@@ -158,11 +158,18 @@ html {
     flex-direction: column;
     justify-content: space-between;
     @include box-shadow-radius;
-    h2 {
+    h2,
+    p {
       color: $font-dark;
       font-size: 1.4rem;
       padding: 15px;
       text-align: center;
+    }
+    p {
+      font-size: 1rem;
+      background-color: $background-medium-light;
+      border-radius: 0 0 7px 7px;
+      
     }
     .np-card-img-wrapper {
       position: relative;
@@ -184,6 +191,9 @@ html {
       .np-card-bucket {
         left: 10px;
       }
+    }
+    .np-card-btn {
+      text-decoration: none;
     }
 }
 
