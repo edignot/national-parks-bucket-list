@@ -15,6 +15,7 @@ class Login extends Component {
       email: '',
       stateCode: '',
       error: '',
+      serverError: '',
       loading: false
     }
   }
@@ -45,11 +46,12 @@ class Login extends Component {
       this.props.login(this.getUserData())
       const npData = await getNPbyState(this.state.stateCode)
       if (npData === 'error') {
-        alert('nooooo')
+        this.setState({ serverError: 'Server error.... '})
       } else {
         const npCleanedData = cleanNPData(npData.data)
         npCleanedData && this.props.addAllNP(npCleanedData)
         this.setState({ loading: false })
+        this.setState({ serverError: '' })
       }
     } else {
       this.setState({ error: 'Enter valid state code'})
@@ -119,10 +121,15 @@ class Login extends Component {
               LOGIN
             </button>
           </form>
-        </section> : 
-        <section className='loading-wrapper'>
-          <p className='loading-msg'>WAIT... FILLING <BsBucket/></p>
-        </section>
+        </section> :
+        (!this.state.serverError ? 
+          <section className='loading-wrapper'>
+            <p className='loading-msg'>WAIT... FILLING <BsBucket/></p>
+          </section> : 
+          <section className='loading-wrapper'>
+          <p className='loading-msg'>{this.state.serverError}<BsBucket/></p>
+          </section>
+          )
         }
       </section>
     )
