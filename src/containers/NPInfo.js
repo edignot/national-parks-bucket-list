@@ -75,7 +75,7 @@ const NPInfo = ({np, user}) => {
                     />
                 </div>
             </section>    
-            <NoteContainer/>  
+            <NoteContainer npId={id}/>  
         </section>
     )
 }

@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const NoteContainer = ({np}) => {
+const NoteContainer = ({np, npId}) => {
+    const npInfo = np.find(park => park.id === npId)
+    console.log(npInfo)
     return (
-        <h1>Notes</h1>
+        <h1>{npId}</h1>
     )
 }
 
