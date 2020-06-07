@@ -14,7 +14,7 @@ export const cleanNPData = (npData) => {
             weatherInfo: np.weatherInfo,
             bucket: false,
             visited: false,
-            notes: []
+            notes: ['note1', 'note2']
         }
     })
 }

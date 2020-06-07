@@ -42,3 +42,8 @@ export const searchByTitle = input => ({
     type: 'SEARCH_BY_TITLE',
     input
 })
+
+export const addNote = note => ({
+    type: 'ADD_NOTE',
+    note
+})

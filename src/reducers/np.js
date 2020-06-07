@@ -21,6 +21,12 @@ export const np = ( state = [], action) => {
                 (i.id === action.id) && (i.visited = !i.visited)
                 return i
             })
+        case 'ADD_NOTE':
+            // PUSH NOTE
+            return state.map(i => {
+                (i.id === action.note.id) && (i.visited = !i.visited)
+                return i
+            })
         default: 
             return state
     }
