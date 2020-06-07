@@ -7,7 +7,7 @@ export const np = ( state = [], action) => {
             let filtered = _.unionBy(stateCopy, action.np, 'id')
             return [...filtered]
         case 'CHANGE_STATE':
-            let saved = state.filter(i => (i.visited || i.bucket))
+            let saved = state.filter(i => (i.visited || i.bucket || i.notes.length))
             return [...saved, ...action.np]
         case 'DELETE_NP':
             return []
@@ -19,12 +19,6 @@ export const np = ( state = [], action) => {
         case 'TOGGLE_VISITED_NP':
             return state.map(i => {
                 (i.id === action.id) && (i.visited = !i.visited)
-                return i
-            })
-        case 'ADD_NOTE':
-            // PUSH NOTE
-            return state.map(i => {
-                (i.id === action.note.id) && (i.visited = !i.visited)
                 return i
             })
         default: 

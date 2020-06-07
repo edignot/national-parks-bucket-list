@@ -10,6 +10,7 @@ import { MdComputer } from 'react-icons/md'
 
 
 const NPInfo = ({np, user}) => {
+    window.scrollTo(0, 0)
     const npInfo = np.find(park => park.id === user.npID)
     const { 
         images, 
@@ -28,12 +29,7 @@ const NPInfo = ({np, user}) => {
         
     return (
         <section className='np-info-container'>
-            <SliderContainer 
-                images={images}
-                id={id}
-                visited={visited}
-                bucket={bucket}
-            />
+            <SliderContainer/>
             <section className='np-info-map-wrapper'>
                 <article className='np-info-wrapper'>
                     <h2>{name} {designation}</h2>
@@ -75,7 +71,7 @@ const NPInfo = ({np, user}) => {
                     />
                 </div>
             </section>    
-            <NoteContainer/>  
+            <NoteContainer id={id}/>  
         </section>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import NPCard from './NPCard'
 import { BsBucket } from 'react-icons/bs'
 import { FaRegCircle } from 'react-icons/fa'
@@ -18,6 +19,12 @@ const NPContainer = ({np, filter, sesion}) => {
                 className='not-found-msg'>it looks like your
                     <span> visited </span>
                 list is empty... </p>
+                <Link
+                    to={'/explore'}
+                    className='add-parks-btn'
+                >
+                    ADD VISITED
+                </Link>
             </div>
         )
     } else if (filter === 'bucket list') {
@@ -28,6 +35,12 @@ const NPContainer = ({np, filter, sesion}) => {
                 <p className='not-found-msg'>it looks like your 
                     <span> bucket </span>
                  is empty... </p>
+                 <Link
+                    to={'/explore'}
+                    className='add-parks-btn'
+                >
+                    ADD PARKS
+                </Link>
             </div>
         )
     } else if (filter === 'all parks') {
@@ -43,6 +56,12 @@ const NPContainer = ({np, filter, sesion}) => {
                 <p className='not-found-msg'>You searched for 
                     <span> {sesion} </span>
                 , but we couldn't find anything...</p>
+                <Link
+                    to={'/explore'}
+                    className='add-parks-btn'
+                >
+                    SEE ALL PARKS
+                </Link>
             </div>
         )
     }

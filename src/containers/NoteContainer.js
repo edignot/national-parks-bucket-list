@@ -4,7 +4,7 @@ import NoteForm from './NoteForm'
 
 const NoteContainer = ({np, user}) => {
     const npInfo = np.find(park => park.id === user.npID)
-    const notes = npInfo.notes.map(note => <li>{note}</li>)
+    const notes = npInfo.notes.map(note => <li key={note}>{note}</li>)
     return (
         <section className='note-container'>
             <h2>Notes:</h2>

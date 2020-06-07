@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { displayNP, toggleBucketNP, toggleVisitedNP } from '../actions'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
-import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
+import { FaCheckCircle, FaRegCircle, FaStickyNote } from 'react-icons/fa'
 import { backupImg } from '../constants'
+
 
 const NPCard = ({
     id, 
@@ -15,9 +16,12 @@ const NPCard = ({
     toggleBucketNP,
     toggleVisitedNP, 
     visited, 
-    bucket
+    bucket,
+    states,
+    notes
 }) => {
-    const randomImg = images[Math.floor(Math.random() * images.length)]
+    // const randomImg = images[Math.floor(Math.random() * images.length)]
+    const randomImg = images[0]
     return (
         <section className='np-card-wrapper'>
             <div className="np-card-img-wrapper">
@@ -41,6 +45,7 @@ const NPCard = ({
                     onClick={() => toggleBucketNP(id)}
                     />
                 }
+                {notes.length ? <FaStickyNote className="np-card-notes"/> : null}
             <Link 
                 to={`/np/${name}`}
                 onClick={() => displayNP(id)}
@@ -51,15 +56,16 @@ const NPCard = ({
                          randomImg.url : 
                          backupImg}
                     alt={name}
-                    width="500"
                 />
             </Link>
             </div>
-            <Link 
+            <Link
+                className='np-card-btn' 
                 to={`/np/${name}`}
                 onClick={() => displayNP(id)}
             >
             <h2>{name} {designation}</h2>
+            <p>{states}</p>
             </Link>
         </section>
     )

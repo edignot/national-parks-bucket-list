@@ -6,6 +6,7 @@ import { getNPbyState } from '../apiCalls/apiCalls'
 import { stateCodes } from '../constants'
 import { FaSearchLocation, FaSearch } from 'react-icons/fa'
 import { BsBucket } from 'react-icons/bs'
+import { cleanNPData } from '../helper'
 
 
 class Search extends Component {
@@ -32,7 +33,8 @@ class Search extends Component {
         e.preventDefault()
         this.setState({ loading: true })
         const npData = await getNPbyState(this.state.stateCode)
-        npData && this.props.changeState(npData.data)
+        const npCleanedData = cleanNPData(npData.data)
+        npCleanedData && this.props.changeState(npCleanedData)
         this.clearInput('stateCode')
         this.setState({ loading: false })
     }
@@ -41,6 +43,8 @@ class Search extends Component {
         e.preventDefault()
         this.setState({ loading: true })
         const npData = await getNPbyState(this.state.stateCodeAdd)
+        const npCleanedData = cleanNPData(npData.data)
+        npCleanedData && this.props.changeState(npCleanedData)
         npData && this.props.addAllNP(npData.data)
         this.clearInput('stateCodeAdd')
         this.setState({ loading: false })
@@ -48,6 +52,11 @@ class Search extends Component {
 
     clearInput = (key) => {
         this.setState({ [key]: '' });
+    }
+
+    search = (e) => {
+        this.props.searchByTitle(this.state.keyword)
+        this.clearInput('keyword')
     }
 
     render () {
@@ -106,7 +115,7 @@ class Search extends Component {
                             />
                         </div>
                         <Link
-                            onClick={() => this.props.searchByTitle(this.state.keyword)}
+                            onClick={this.search}
                             to={`/explore/search`}
                             className='search-btn'
                         >

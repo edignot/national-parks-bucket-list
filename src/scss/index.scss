@@ -142,6 +142,11 @@ html {
     font-size: 100px;
     align-self: center;
   }
+  .add-parks-btn {
+    @include button($background-dark);
+    margin-top: 50px;
+    text-decoration: none;
+  }
 }
 
 .np-card-wrapper {
@@ -153,11 +158,18 @@ html {
     flex-direction: column;
     justify-content: space-between;
     @include box-shadow-radius;
-    h2 {
+    h2,
+    p {
       color: $font-dark;
       font-size: 1.4rem;
       padding: 15px;
       text-align: center;
+    }
+    p {
+      font-size: 1rem;
+      background-color: $background-medium-light;
+      border-radius: 0 0 7px 7px;
+      
     }
     .np-card-img-wrapper {
       position: relative;
@@ -170,7 +182,8 @@ html {
         border-radius: 7px 7px 0 0;
       }
       .np-card-bucket,
-      .np-card-check {
+      .np-card-check,
+      .np-card-notes {
         font-size: 3rem;
         @include icon-on-img;
         @include icon-hover;
@@ -179,6 +192,12 @@ html {
       .np-card-bucket {
         left: 10px;
       }
+      .np-card-notes {
+        right: 60px;
+      }
+    }
+    .np-card-btn {
+      text-decoration: none;
     }
 }
 
