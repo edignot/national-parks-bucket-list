@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addNote } from '../actions'
+import { addAllNP } from '../actions'
 import { connect } from 'react-redux'
 import { MdAddCircle } from 'react-icons/md'
 
@@ -18,15 +18,13 @@ class NoteForm extends Component {
 
     addNote = (e) => {
         e.preventDefault()
-        this.props.addNote({
-            parkId: this.props.user.npID,
-            noteText: this.state.note
-        })
+        const npInfo = this.props.np.find(park => park.id === this.props.user.npID)
+        npInfo.notes.push(this.state.note)
+        this.props.addAllNP([npInfo])
         this.setState({ note: '' });
     }
 
     render () {
-        console.log(this.props.user.npID)
         return (
             <form className='note-form'>
                 <textarea
@@ -50,11 +48,12 @@ class NoteForm extends Component {
 }
 
 export const mapState = state => ({
-    user: state.user
+    user: state.user,
+    np: state.np
 })
 
 const mapDispatch = (dispatch) => ({
-    addNote: note => dispatch( addNote(note)),
+    addAllNP: np => dispatch( addAllNP(np)),
 })
 
 export default connect(mapState, mapDispatch)(NoteForm)
