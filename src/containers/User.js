@@ -28,13 +28,13 @@ const User = ({logout, deleteNP, user, np}) => {
                         <div>
                             <BsBucketFill className='user-icon'/>
                         </div>
-                    <p>{visitedAmount.length}</p>
+                    <p>{bucketAmount.length}</p>
                     </div>
                     <div className='user-feature'>
                         <div>
                             <FaCheckCircle className='user-icon'/>
                         </div>
-                        <p>{bucketAmount.length}</p>
+                        <p>{visitedAmount.length}</p>
                     </div>
                     <button
                         className='logout-btn' 

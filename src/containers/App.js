@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import { withRouter } from 'react-router'
 import NotFound from '../components/NotFound'
 import Nav from '../components/Nav'
 import Login from './Login'
