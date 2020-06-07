@@ -50,6 +50,11 @@ class Search extends Component {
         this.setState({ [key]: '' });
     }
 
+    search = (e) => {
+        this.props.searchByTitle(this.state.keyword)
+        this.clearInput('keyword')
+    }
+
     render () {
         return (
             <section>
@@ -106,7 +111,7 @@ class Search extends Component {
                             />
                         </div>
                         <Link
-                            onClick={() => this.props.searchByTitle(this.state.keyword)}
+                            onClick={this.search}
                             to={`/explore/search`}
                             className='search-btn'
                         >

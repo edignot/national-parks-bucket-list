@@ -56,6 +56,12 @@ const NPContainer = ({np, filter, sesion}) => {
                 <p className='not-found-msg'>You searched for 
                     <span> {sesion} </span>
                 , but we couldn't find anything...</p>
+                <Link
+                    to={'/explore'}
+                    className='add-parks-btn'
+                >
+                    SEE ALL PARKS
+                </Link>
             </div>
         )
     }

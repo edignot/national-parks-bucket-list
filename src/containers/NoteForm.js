@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { addAllNP } from '../actions'
 import { connect } from 'react-redux'
-import { MdAddCircle } from 'react-icons/md'
-
 
 class NoteForm extends Component {
     constructor(props) {
