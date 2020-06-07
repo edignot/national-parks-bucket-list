@@ -10,6 +10,7 @@ import { MdComputer } from 'react-icons/md'
 
 
 const NPInfo = ({np, user}) => {
+    // window.scrollTo(0, 0)
     const npInfo = np.find(park => park.id === user.npID)
     const { 
         images, 
