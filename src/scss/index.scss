@@ -142,6 +142,11 @@ html {
     font-size: 100px;
     align-self: center;
   }
+  .add-parks-btn {
+    @include button($background-dark);
+    margin-top: 50px;
+    text-decoration: none;
+  }
 }
 
 .np-card-wrapper {
