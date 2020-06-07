@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import NPCard from './NPCard'
 import { BsBucket } from 'react-icons/bs'
 import { FaRegCircle } from 'react-icons/fa'
+import { MdSentimentDissatisfied } from 'react-icons/md'
+
 
 const NPContainer = ({np, filter}) => {
     let npFiltered
@@ -30,6 +32,14 @@ const NPContainer = ({np, filter}) => {
         )
     } else if (filter === 'all parks') {
         npFiltered = np
+    } else if (filter === 'search results') {
+        npFiltered = np.filter(park => park.bucket)
+        notFound = (
+            <div className='not-found-wrapper'>
+                <MdSentimentDissatisfied className='not-found-icon'/>
+                <p className='not-found-msg'>we couldn't find anything... </p>
+            </div>
+        )
     }
     const parks = npFiltered.map(park => {
         return (

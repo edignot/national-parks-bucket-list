@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { changeState, addAllNP } from '../actions'
+import { Link } from 'react-router-dom'
+import { changeState, addAllNP, searchByTitle } from '../actions'
 import { connect } from 'react-redux'
 import { getNPbyState } from '../apiCalls/apiCalls'
 import { stateCodes } from '../constants'
@@ -19,6 +20,7 @@ class Search extends Component {
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
+
 
     isStateCodeValid = (type) => {
         return stateCodes.includes(this.state[type].toLocaleUpperCase())
@@ -95,11 +97,13 @@ class Search extends Component {
                             onChange={this.handleChange} 
                         />
                     </div>
-                    <button
+                    <Link
+                        onClick={() => this.props.searchByTitle(this.state.keyword)}
+                        to={`/explore/search`}
                         className='search-btn'
                     >
                         <FaSearch/>
-                        </button>
+                    </Link>
                 </div>
             </section>
         )
@@ -108,7 +112,8 @@ class Search extends Component {
 
 const mapDispatch = (dispatch) => ({
     changeState: np => dispatch( changeState(np)),
-    addAllNP: np => dispatch( addAllNP(np))
+    addAllNP: np => dispatch( addAllNP(np)),
+    searchByTitle: input => dispatch( searchByTitle(input))
 })
 
 export default connect(null, mapDispatch)(Search)

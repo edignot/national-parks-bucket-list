@@ -37,3 +37,8 @@ export const displayNP = id => ({
     type: 'DISPLAY_NP',
     id
 })
+
+export const searchByTitle = input => ({
+    type: 'SEARCH_BY_TITLE',
+    input
+})
