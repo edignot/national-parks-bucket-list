@@ -18,7 +18,8 @@ const NPCard = ({
     bucket,
     states
 }) => {
-    const randomImg = images[Math.floor(Math.random() * images.length)]
+    // const randomImg = images[Math.floor(Math.random() * images.length)]
+    const randomImg = images[0]
     return (
         <section className='np-card-wrapper'>
             <div className="np-card-img-wrapper">
@@ -52,7 +53,6 @@ const NPCard = ({
                          randomImg.url : 
                          backupImg}
                     alt={name}
-                    width="500"
                 />
             </Link>
             </div>
