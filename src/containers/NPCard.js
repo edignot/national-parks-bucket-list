@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { displayNP, toggleBucketNP, toggleVisitedNP } from '../actions'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import { FaCheckCircle, FaRegCircle, FaStickyNote } from 'react-icons/fa'
@@ -20,7 +21,6 @@ const NPCard = ({
     states,
     notes
 }) => {
-    // const randomImg = images[Math.floor(Math.random() * images.length)]
     const randomImg = images[0]
     return (
         <section className='np-card-wrapper'>
@@ -78,3 +78,14 @@ const mapDispatch = (dispatch) => ({
 })
 
 export default connect(null, mapDispatch)(NPCard)
+
+NPCard.propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    designation: PropTypes.string.isRequired,
+    visited: PropTypes.bool.isRequired,
+    bucket: PropTypes.bool.isRequired,
+    notes: PropTypes.array.isRequired,
+    images: PropTypes.array.isRequired,
+    states: PropTypes.string.isRequired,
+}
