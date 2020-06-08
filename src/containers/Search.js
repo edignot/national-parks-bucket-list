@@ -44,8 +44,7 @@ class Search extends Component {
         this.setState({ loading: true })
         const npData = await getNPbyState(this.state.stateCodeAdd)
         const npCleanedData = cleanNPData(npData.data)
-        npCleanedData && this.props.changeState(npCleanedData)
-        npData && this.props.addAllNP(npData.data)
+        npCleanedData && this.props.addAllNP(npCleanedData)
         this.clearInput('stateCodeAdd')
         this.setState({ loading: false })
     }
