@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import NPCard from './NPCard'
 import { BsBucket } from 'react-icons/bs'
 import { FaRegCircle } from 'react-icons/fa'
@@ -91,3 +92,7 @@ export const mapState = state => ({
 })
 
 export default connect(mapState)(NPContainer)
+
+NPCard.propTypes = {
+    filter: PropTypes.string.isRequired,
+}

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
-import { connect } from 'react-redux'
 import { displayNP } from '../actions'
 
 
@@ -25,3 +26,13 @@ const mapDispatch = (dispatch) => ({
 })
 
 export default connect(null, mapDispatch)(MapTag)
+
+MapTag.propTypes = {
+    lat: PropTypes.string.isRequired,
+    lng: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    designation: PropTypes.string.isRequired,
+    visited: PropTypes.bool.isRequired,
+    bucket: PropTypes.bool.isRequired
+}
