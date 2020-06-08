@@ -1,23 +1,23 @@
-import React from 'react'
-import { render, cleanup, fireEvent } from '@testing-library/react'
-import User from './User'
-import { BrowserRouter } from 'react-router-dom'
+// import React from 'react'
+// import { render, cleanup, fireEvent } from '@testing-library/react'
+// import User from './User'
+// import { BrowserRouter } from 'react-router-dom'
 
-describe('<User/>', () => {
-  let UserContainer
+// describe('<User/>', () => {
+//   let UserContainer
   
-  beforeEach(() => {
-    UserContainer = render(
-      <BrowserRouter>
-        <User/>
-      </BrowserRouter>
-    )
-  })
+//   beforeEach(() => {
+//     UserContainer = render(
+//       <BrowserRouter>
+//         <User/>
+//       </BrowserRouter>
+//     )
+//   })
   
-  afterEach(cleanup)
+//   afterEach(cleanup)
   
-  test('<User/> component successfully renders', () => {
-    const { getByText } = UserContainer
-    expect(true).toBeTruthy()
-  })
-})
+//   test('<User/> component successfully renders', () => {
+//     const { getByText } = UserContainer
+//     expect(true).toBeTruthy()
+//   })
+// })

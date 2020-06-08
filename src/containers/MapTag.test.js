@@ -1,23 +1,23 @@
-import React from 'react'
-import { render, cleanup, fireEvent } from '@testing-library/react'
-import MapTag from './MapTag'
-import { BrowserRouter } from 'react-router-dom'
+// import React from 'react'
+// import { render, cleanup, fireEvent } from '@testing-library/react'
+// import MapTag from './MapTag'
+// import { BrowserRouter } from 'react-router-dom'
 
-describe('<MapTag/>', () => {
-  let MapTagContainer
+// describe('<MapTag/>', () => {
+//   let MapTagContainer
   
-  beforeEach(() => {
-    MapTagContainer = render(
-      <BrowserRouter>
-        <MapTag/>
-      </BrowserRouter>
-    )
-  })
+//   beforeEach(() => {
+//     MapTagContainer = render(
+//       <BrowserRouter>
+//         <MapTag/>
+//       </BrowserRouter>
+//     )
+//   })
   
-  afterEach(cleanup)
+//   afterEach(cleanup)
   
-  test('<MapTag/> component successfully renders', () => {
-    const { getByText } = MapTagContainer
-    expect(true).toBeTruthy()
-  })
-})
+//   test('<MapTag/> component successfully renders', () => {
+//     const { getByText } = MapTagContainer
+//     expect(true).toBeTruthy()
+//   })
+// })

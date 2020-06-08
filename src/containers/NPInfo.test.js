@@ -1,23 +1,23 @@
-import React from 'react'
-import { render, cleanup, fireEvent } from '@testing-library/react'
-import NPInfo from './NPInfo'
-import { BrowserRouter } from 'react-router-dom'
+// import React from 'react'
+// import { render, cleanup, fireEvent } from '@testing-library/react'
+// import NPInfo from './NPInfo'
+// import { BrowserRouter } from 'react-router-dom'
 
-describe('<NPInfo/>', () => {
-  let NPInfoContainer
+// describe('<NPInfo/>', () => {
+//   let NPInfoContainer
   
-  beforeEach(() => {
-    NPInfoContainer = render(
-      <BrowserRouter>
-        <NPInfo/>
-      </BrowserRouter>
-    )
-  })
+//   beforeEach(() => {
+//     NPInfoContainer = render(
+//       <BrowserRouter>
+//         <NPInfo/>
+//       </BrowserRouter>
+//     )
+//   })
   
-  afterEach(cleanup)
+//   afterEach(cleanup)
   
-  test('<NPInfo/> component successfully renders', () => {
-    const { getByText } = NPInfoContainer
-    expect(true).toBeTruthy()
-  })
-})
+//   test('<NPInfo/> component successfully renders', () => {
+//     const { getByText } = NPInfoContainer
+//     expect(true).toBeTruthy()
+//   })
+// })
