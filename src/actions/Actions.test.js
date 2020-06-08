@@ -80,6 +80,24 @@ describe('ACTIONS', () => {
     expect(result).toEqual(expectedAction)
   })
 
+  test('should have a type of DISPLAY_NP', () => {
+    const expectedAction = {
+        type: 'DISPLAY_NP',
+        id
+    }
+    const result = actions.displayNP(id)
+    expect(result).toEqual(expectedAction)
+  })
+
+  test('should have a type of SEARCH_BY_TITLE', () => {
+    const expectedAction = {
+        type: 'SEARCH_BY_TITLE',
+        input
+    }
+    const result = actions.searchByTitle(input)
+    expect(result).toEqual(expectedAction)
+  })
+
   test('should have a type of LOGIN', () => {
     const expectedAction = {
         type: 'LOGIN',
@@ -96,22 +114,4 @@ describe('ACTIONS', () => {
     const result = actions.logout()
     expect(result).toEqual(expectedAction)
   })
-
-  //   test('should have a type of DISPLAY_NP', id => {
-  //   const expectedAction = {
-  //       type: 'DISPLAY_NP',
-  //       id
-  //   }
-  //   const result = actions.displayNP(id)
-  //   expect(result).toEqual(expectedAction)
-  // })
-
-//   test('should have a type of SEARCH_BY_TITLE', input => {
-//     const expectedAction = {
-//         type: 'SEARCH_BY_TITLE',
-//         input
-//     }
-//     const result = actions.searchByTitle(input)
-//     expect(result).toEqual(expectedAction)
-//   })
 })
