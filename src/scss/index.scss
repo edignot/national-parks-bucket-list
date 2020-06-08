@@ -309,6 +309,9 @@ html {
 
 .map-tag {
   font-size: 1.4rem;
+  background-color: $background-medium;
+  padding: 2px;
+  @include box-shadow-radius;
 }
 
 .map-title {
