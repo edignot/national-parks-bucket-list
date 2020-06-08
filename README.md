@@ -8,8 +8,8 @@
 ![3](/gifs/3.gif)
 #### Select any National Park from the list
 ![4](/gifs/4.gif)
-####
+#### See National Park Info, official website link, google map with all National Parks in that state
 ![5](/gifs/5.gif)
-####
+#### Select any park on a map
 ![6](/gifs/6.gif)
 
