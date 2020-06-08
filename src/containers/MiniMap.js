@@ -26,7 +26,7 @@ const MiniMap = ({np, lat, lng, id, name, designation, visited, bucket}) => {
           <GoogleMapReact
             bootstrapURLKeys={{ key: apiKey }}
             center={centr}
-            zoom={15}
+            zoom={10}
           >
             { markers }
             <MapTag

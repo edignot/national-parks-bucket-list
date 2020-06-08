@@ -26,7 +26,7 @@ class Login extends Component {
   }
 
   resetError = () => {
-    this.state.error = ''
+    this.setState({ error: '' })
   }
 
   isFormCompleted = () => {

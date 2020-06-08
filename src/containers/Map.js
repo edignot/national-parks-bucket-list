@@ -10,6 +10,7 @@ const Map = ({np}) => {
     const markers = np.map(park => {
       return (
         <MapTag
+              key={park.id}
               lat={park.latitude}
               lng={park.longitude}
               id={park.id}
