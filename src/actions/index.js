@@ -23,16 +23,6 @@ export const toggleVisitedNP = id => ({
     id
 })
 
-export const login = user => ({
-    type: 'LOGIN',
-    user
-})
-
-export const logout = userTemplate => ({
-    type: 'LOGOUT',
-    userTemplate
-})
-
 export const displayNP = id => ({
     type: 'DISPLAY_NP',
     id
@@ -42,3 +32,13 @@ export const searchByTitle = input => ({
     type: 'SEARCH_BY_TITLE',
     input
 })
+
+export const login = user => ({
+    type: 'LOGIN',
+    user
+})
+
+export const logout = () => ({
+    type: 'LOGOUT'
+})
+
