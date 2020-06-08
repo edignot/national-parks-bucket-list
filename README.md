@@ -1,1 +1,2 @@
-![1](/src/gifs/1)
+![1](/gifs/1.gif)
+![2](/gifs/2.gif)
