@@ -1,3 +1,14 @@
+# NATIONAL PARKS BUCKET LIST
+
+## Abstract: 
+*National Parks Bucket List* is an app using [NPS Data API](https://www.nps.gov/subjects/developer/index.htm). This app allows user to explore all National Parks in US, mark them as visited, add them to personal bucket list, create text notes, see location on a map. This app doesn't try to solve any existing issue, it just had a simple purpose - inspire user for a next roadtrip and focus on clean UI.
+
+## Learning goals:
+This is a is a solo project built over the course of 6 days. The goal for this project was to learn Redux from scratch and incorporate it into the application.
+
+## Technologies: 
+*React*, *Redux*, *React Router*, *Fetch API*, *Lodash*, *Sass*, *ES6*, *Jest*, *react Testing Library*
+
 ## User story:
 ### User should be able to:
 #### Login by entering name, email and valid US state code ( upper or lowe case ). See loading page when fetching NP data.
@@ -24,3 +35,12 @@
 ![11](/gifs/11.gif)
 #### Open user page. See name, email and how many parks are inside bucket list and how many are visited. Be able to logout
 ![12](/gifs/12.gif)
+
+## Setup
+1. clone down this repo to desired location
+2. `cd` into the new directory
+3. run `npm install`
+4. run `npm start`
+5. Open localhost:3000 in your favorite browser (unless your terminal says otherwise)
+
+
