@@ -24,9 +24,9 @@ const MiniMap = ({np, lat, lng, id, name, designation, visited, bucket}) => {
       return (
         <section style={{ height: '100%', width: '100%' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: '' }}
+            bootstrapURLKeys={{ key: apiKey }}
             center={centr}
-            zoom={15}
+            zoom={10}
           >
             { markers }
             <MapTag

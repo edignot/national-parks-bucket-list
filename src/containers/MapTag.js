@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaMountain } from 'react-icons/fa'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 import { FaCheckCircle, FaRegCircle } from 'react-icons/fa'
 import { connect } from 'react-redux'

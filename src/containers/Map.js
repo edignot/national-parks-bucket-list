@@ -10,6 +10,7 @@ const Map = ({np}) => {
     const markers = np.map(park => {
       return (
         <MapTag
+              key={park.id}
               lat={park.latitude}
               lng={park.longitude}
               id={park.id}
@@ -23,7 +24,7 @@ const Map = ({np}) => {
       return (
         <div style={{ height: '100vh', width: '100vw' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: ''}}
+            bootstrapURLKeys={{ key: apiKey}}
             center={centr}
             zoom={7}
           >

@@ -13,7 +13,6 @@ const NPInfo = ({np, user}) => {
     window.scrollTo(0, 0)
     const npInfo = np.find(park => park.id === user.npID)
     const { 
-        images, 
         id, 
         visited, 
         bucket, 
@@ -55,7 +54,12 @@ const NPInfo = ({np, user}) => {
                         <div>
                             <MdComputer className='feature-icon'/>
                         </div>
-                        <a href={url} target='_blank'>website</a>
+                        <a 
+                            href={url} target='_blank'
+                            rel="noopener noreferrer"
+                        >
+                            website
+                        </a>
                     </div>    
                 </article>
 
