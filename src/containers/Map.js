@@ -23,7 +23,7 @@ const Map = ({np}) => {
       return (
         <div style={{ height: '100vh', width: '100vw' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: ''}}
+            bootstrapURLKeys={{ key: apiKey}}
             center={centr}
             zoom={7}
           >
