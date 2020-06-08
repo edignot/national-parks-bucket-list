@@ -3,8 +3,7 @@ const userTemplate = {
     email: '',
     stateCode: '',
     bucketList: [],
-    visited: [],
-    // npID: ''
+    visited: []
 }
 
 export const user = ( state = userTemplate, action ) => {
@@ -13,8 +12,6 @@ export const user = ( state = userTemplate, action ) => {
             return {...userTemplate, ...action.user}
         case 'LOGOUT':
             return userTemplate
-        // case 'DISPLAY_NP':
-        //     return {...state, npID: action.id}
         default:
             return state
     }
