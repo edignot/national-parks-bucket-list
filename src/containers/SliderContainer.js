@@ -9,8 +9,8 @@ import { FaArrowCircleLeft, FaRegCircle, FaCheckCircle } from 'react-icons/fa'
 import { BsBucket, BsBucketFill } from 'react-icons/bs'
 
 
-const SliderContainer = ({np, user, toggleBucketNP, toggleVisitedNP}) => {
-    const npInfo = np.find(park => park.id === user.npID)
+const SliderContainer = ({np, sesion, toggleBucketNP, toggleVisitedNP}) => {
+    const npInfo = np.find(park => park.id === sesion.npID)
     const {
         id, 
         images, 
@@ -70,7 +70,7 @@ const SliderContainer = ({np, user, toggleBucketNP, toggleVisitedNP}) => {
 
 export const mapState = state => ({
     np: state.np,
-    user: state.user
+    sesion: state.sesion
 })
 
 const mapDispatch = (dispatch) => ({

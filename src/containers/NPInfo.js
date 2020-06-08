@@ -9,9 +9,9 @@ import { IoIosPartlySunny } from 'react-icons/io'
 import { MdComputer } from 'react-icons/md'
 
 
-const NPInfo = ({np, user}) => {
+const NPInfo = ({np, sesion}) => {
     window.scrollTo(0, 0)
-    const npInfo = np.find(park => park.id === user.npID)
+    const npInfo = np.find(park => park.id === sesion.npID)
     const { 
         id, 
         visited, 
@@ -25,6 +25,7 @@ const NPInfo = ({np, user}) => {
         weatherInfo,
         url
      } = npInfo
+     console.log(npInfo)
         
     return (
         <section className='np-info-container'>
@@ -82,7 +83,7 @@ const NPInfo = ({np, user}) => {
 
 export const mapState = state => ({
     np: state.np,
-    user: state.user
+    sesion: state.sesion
 })
 
 export default connect(mapState)(NPInfo)
