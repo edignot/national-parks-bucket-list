@@ -13,7 +13,7 @@ export const cleanNPData = (npData) => {
             weatherInfo: np.weatherInfo,
             bucket: false,
             visited: false,
-            notes: ['Hello']
+            notes: []
         }
     })
 }
