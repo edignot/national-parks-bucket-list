@@ -12,4 +12,15 @@
 ![5](/gifs/5.gif)
 #### Select any park on a map
 ![6](/gifs/6.gif)
-
+#### 
+![7](/gifs/7.gif)
+#### 
+![8](/gifs/8.gif)
+#### 
+![9](/gifs/9.gif)
+#### 
+![10](/gifs/10.gif)
+#### 
+![11](/gifs/11.gif)
+#### 
+![12](/gifs/12.gif)
