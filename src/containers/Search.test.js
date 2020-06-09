@@ -9,8 +9,6 @@ import rootReducer from '../reducers'
 
 describe('<Search/>', () => {
 
-  const isStateCodeValidmock= jest.fn()
-
   let SearchContainer
   let store
   
@@ -21,7 +19,7 @@ describe('<Search/>', () => {
     SearchContainer = render(
         <Provider store={store}>
             <BrowserRouter>
-                <Search isStateCodeValid={isStateCodeValidmock}/>
+                <Search/>
             </BrowserRouter>
         </Provider>
     )
@@ -69,4 +67,11 @@ describe('<Search/>', () => {
     expect(getByTestId('add-state-btn')).not.toHaveAttribute('disabled')
   })
 
+  test('that search input is cleared', () => {
+    const { getByTestId, getByLabelText, debug } = SearchContainer
+    getByLabelText('Search by National Park title:').value = 'PARK'
+    fireEvent.change(getByLabelText('Search by National Park title:'))
+    fireEvent.click(getByTestId('search-btn'))
+    expect(getByLabelText('Search by National Park title:').value).toBe('')
+  })
 })

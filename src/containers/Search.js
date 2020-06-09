@@ -119,6 +119,7 @@ class Search extends Component {
                             </label>
                         </div>
                         <Link
+                            data-testid='search-btn'
                             onClick={this.search}
                             to={`/explore/search`}
                             className='search-btn'
