@@ -9,8 +9,6 @@ import rootReducer from '../reducers'
 
 describe('<App/>', () => {
 
-
-
   let AppContainer
   let store
   
@@ -30,6 +28,7 @@ describe('<App/>', () => {
   afterEach(cleanup)
   
   test('<App/> component successfully renders', () => {
-    expect(true).toBeTruthy()
+    const { getByTestId } = AppContainer
+    expect(getByTestId('app-container')).toBeInTheDocument()
   })
 })

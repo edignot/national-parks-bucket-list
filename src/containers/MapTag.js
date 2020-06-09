@@ -17,21 +17,21 @@ const MapTag = ({name, id, designation, displayNP, visited, bucket}) => {
           {!visited ? 
             <FaRegCircle 
               className='map-tag'
-              data-testid='visited-false'
+              data-testid='map-visited-false'
             /> : 
             <FaCheckCircle 
               className='map-tag'
-              data-testid='visited-true'
+              data-testid='map-visited-true'
             />
           }
           {!bucket ?
             <BsBucket 
               className='map-tag'
-              data-testid='bucket-false'
+              data-testid='map-bucket-false'
             /> : 
             <BsBucketFill 
               className='map-tag'
-              data-testid='bucket-true'
+              data-testid='map-bucket-true'
             />
            }
         <h2 className='map-title'>{name} {designation}</h2>

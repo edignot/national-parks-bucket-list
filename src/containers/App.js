@@ -14,7 +14,10 @@ class App extends Component {
   render() {
     const { user, np } = this.props
     return (
-      <section className="app-container">
+      <section 
+        data-testid='app-container'
+        className='app-container'
+      >
         {!user.userName && <Redirect to="/" />}
         {np.length>0 && <Redirect to="/explore" />}
         <Switch>

@@ -32,21 +32,21 @@ describe('<Search/>', () => {
     expect(getByLabelText('Change state:')).toBeInTheDocument()
   })
 
-  test('Change state input value is changed', () => {
+  test('Change state input value updates', () => {
     const { getByLabelText } = SearchContainer
     getByLabelText('Change state:').value = 'AK'
     fireEvent.change(getByLabelText('Change state:'))
     expect(getByLabelText('Change state:').value).toBe('AK')
   })
 
-  test('Add state input value is changed', () => {
+  test('Add state input value updates', () => {
     const { getByLabelText } = SearchContainer
     getByLabelText('Add state:').value = 'AK'
     fireEvent.change(getByLabelText('Add state:'))
     expect(getByLabelText('Add state:').value).toBe('AK')
   })
 
-  test('Search by National Park title input value is changed', () => {
+  test('Search by National Park title input value updates', () => {
     const { getByLabelText } = SearchContainer
     getByLabelText('Search by National Park title:').value = 'PARK'
     fireEvent.change(getByLabelText('Search by National Park title:'))

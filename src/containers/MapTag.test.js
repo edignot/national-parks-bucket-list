@@ -38,7 +38,7 @@ describe('<MapTag/>', () => {
   
   test('<MapTag/> component successfully renders', () => {
     const { getByTestId } = MapTagContainer
-    expect(getByTestId('visited-true')).toBeInTheDocument()
-    expect(getByTestId('bucket-false')).toBeInTheDocument()
+    expect(getByTestId('map-visited-true')).toBeInTheDocument()
+    expect(getByTestId('map-bucket-false')).toBeInTheDocument()
   })
 })
