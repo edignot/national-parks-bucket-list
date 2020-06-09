@@ -9,6 +9,8 @@ import rootReducer from '../reducers'
 
 describe('<Search/>', () => {
 
+  const isStateCodeValidmock= jest.fn()
+
   let SearchContainer
   let store
   
@@ -19,7 +21,7 @@ describe('<Search/>', () => {
     SearchContainer = render(
         <Provider store={store}>
             <BrowserRouter>
-                <Search/>
+                <Search isStateCodeValid={isStateCodeValidmock}/>
             </BrowserRouter>
         </Provider>
     )
@@ -54,17 +56,17 @@ describe('<Search/>', () => {
   })
 
   test('that change state button is enabled if state code is valid', () => {
-    const { getByTestId } = SearchContainer
+    const { getByTestId, getByLabelText } = SearchContainer
     expect(getByTestId('change-state-btn')).toHaveAttribute('disabled')
-    // fireEvent.change(getByLabelText('Change state:'), {target: {value: 'AK'}})
-    // expect(getByText('Change state:')).not.toHaveAttribute('disabled')
+    fireEvent.change(getByLabelText('Change state:'), {target: {value: 'AK'}})
+    expect(getByTestId('change-state-btn')).not.toHaveAttribute('disabled')
   })
 
   test('that add state button is enabled if state code is valid', () => {
-    const { getByTestId } = SearchContainer
+    const { getByTestId, getByLabelText } = SearchContainer
     expect(getByTestId('add-state-btn')).toHaveAttribute('disabled')
-    // fireEvent.change(getByLabelText('Change state:'), {target: {value: 'AK'}})
-    // expect(getByText('Change state:')).not.toHaveAttribute('disabled')
+    fireEvent.change(getByLabelText('Add state:'), {target: {value: 'AK'}})
+    expect(getByTestId('add-state-btn')).not.toHaveAttribute('disabled')
   })
 
 })
