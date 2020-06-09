@@ -26,6 +26,7 @@ class NoteForm extends Component {
         return (
             <form className='note-form'>
                 <textarea
+                    data-testid='note-input'
                     rows='4'
                     name='note'
                     type='textarea'
