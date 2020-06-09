@@ -3,8 +3,8 @@ import User from './User'
 import { render, cleanup, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import rootReducer from '../reducers'
 
 describe('<User/>', () => {
@@ -14,12 +14,13 @@ describe('<User/>', () => {
   let initialState
 
   beforeEach(() => {
-   initialState = { user: {
-        userName: 'edita',
-        email: 'edita@gmail.com',
-        stateCode: 'CO',
-        bucketList: [],
-        visited: []
+   initialState = { 
+        user: {
+          userName: 'edita',
+          email: 'edita@gmail.com',
+          stateCode: 'CO',
+          bucketList: [],
+          visited: []
         },
         np: [{
           name: 'name1',
