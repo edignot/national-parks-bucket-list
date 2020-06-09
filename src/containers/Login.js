@@ -75,7 +75,10 @@ class Login extends Component {
       <section className='login-container'>
         {!this.state.loading ?
         <section className='login-wrapper'>
-          <h1 className='login-header'>
+          <h1
+            data-testid='title' 
+            className='login-header'
+          >
             National Parks <BsBucketFill/> List
           </h1>
           <form
@@ -84,34 +87,37 @@ class Login extends Component {
           >
             <p className='error-msg'>{this.state.error}</p>
             <div className='login-item'>
-              <label htmlFor="userName">* Username:</label>
-              <input
-                name='userName'
-                type='text'
-                value={this.state.userName}
-                placeholder="username"
-                onChange={this.handleChange} 
-              />
+              <label htmlFor="userName">* Username:
+                <input
+                  name='userName'
+                  type='text'
+                  value={this.state.userName}
+                  placeholder="username"
+                  onChange={this.handleChange} 
+                />
+              </label>
             </div>
             <div className='login-item'>
-              <label htmlFor="email">* Email:</label>
-              <input
-                name='email'
-                type='text'
-                value={this.state.email}
-                placeholder="email"
-                onChange={this.handleChange} 
-              />
+              <label htmlFor="email">* Email:
+                <input
+                  name='email'
+                  type='text'
+                  value={this.state.email}
+                  placeholder="email"
+                  onChange={this.handleChange} 
+                />
+              </label>
             </div>
             <div className='login-item'>
-              <label htmlFor="stateCode">* State code:</label>
-              <input
-                name='stateCode'
-                type='text'
-                value={this.state.stateCode}
-                placeholder="e.g. CO"
-                onChange={this.handleChange} 
-              />
+              <label htmlFor="stateCode">* State code:
+                <input
+                  name='stateCode'
+                  type='text'
+                  value={this.state.stateCode}
+                  placeholder="e.g. CO"
+                  onChange={this.handleChange} 
+                />
+              </label>
             </div>
             <p className='error-msg'>* required</p>
             <button
@@ -127,7 +133,7 @@ class Login extends Component {
             <p className='loading-msg'>WAIT... FILLING <BsBucket/></p>
           </section> : 
           <section className='loading-wrapper'>
-          <p className='loading-msg'>{this.state.serverError}<BsBucket/></p>
+            <p className='loading-msg'>{this.state.serverError}<BsBucket/></p>
           </section>
           )
         }

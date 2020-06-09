@@ -48,14 +48,14 @@ const NPContainer = ({np, filter, sesion}) => {
         npFiltered = np
     } else if (filter === 'search results') {
         npFiltered = np.filter(park => {
-            return (park.name.toUpperCase().includes(sesion.toUpperCase()) || 
-            park.designation.toUpperCase().includes(sesion.toUpperCase()))
+            return (park.name.toUpperCase().includes(sesion.search.toUpperCase()) || 
+            park.designation.toUpperCase().includes(sesion.search.toUpperCase()))
         })
         notFound = (
             <div className='not-found-wrapper'>
                 <MdSentimentDissatisfied className='not-found-icon'/>
                 <p className='not-found-msg'>You searched for 
-                    <span> {sesion} </span>
+                    <span> {sesion.search} </span>
                 , but we couldn't find anything...</p>
                 <Link
                     to={'/explore'}

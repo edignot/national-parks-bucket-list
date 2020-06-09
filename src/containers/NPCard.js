@@ -27,20 +27,24 @@ const NPCard = ({
             <div className="np-card-img-wrapper">
                 {!visited
                 ? <FaRegCircle
+                    data-testid='visited-false'
                     className="np-card-check"
                     onClick={() => toggleVisitedNP(id)}
                     />
                 : <FaCheckCircle
+                    data-testid='visited-true'
                     className="np-card-check"
                     onClick={() => toggleVisitedNP(id)}
                     />
                 }
                 {!bucket
                 ? <BsBucket
+                    data-testid='bucket-false'
                     className="np-card-bucket"t
                     onClick={() => toggleBucketNP(id)}
                     />
                 : <BsBucketFill
+                    data-testid='bucket-true'
                     className="np-card-bucket"
                     onClick={() => toggleBucketNP(id)}
                     />
@@ -51,6 +55,7 @@ const NPCard = ({
                 onClick={() => displayNP(id)}
             >
                 <img
+                    data-testid='np-card-img'
                     className="np-card-img"
                     src={randomImg ?
                          randomImg.url : 

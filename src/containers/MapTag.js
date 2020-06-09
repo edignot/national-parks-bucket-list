@@ -14,8 +14,26 @@ const MapTag = ({name, id, designation, displayNP, visited, bucket}) => {
         to={`/np/${name}`}
         onClick={() => displayNP(id)} 
       >
-          {!visited ? <FaRegCircle className='map-tag'/> : <FaCheckCircle className='map-tag'/>}
-          {!bucket ? <BsBucket className='map-tag'/> : <BsBucketFill className='map-tag'/>}
+          {!visited ? 
+            <FaRegCircle 
+              className='map-tag'
+              data-testid='map-visited-false'
+            /> : 
+            <FaCheckCircle 
+              className='map-tag'
+              data-testid='map-visited-true'
+            />
+          }
+          {!bucket ?
+            <BsBucket 
+              className='map-tag'
+              data-testid='map-bucket-false'
+            /> : 
+            <BsBucketFill 
+              className='map-tag'
+              data-testid='map-bucket-true'
+            />
+           }
         <h2 className='map-title'>{name} {designation}</h2>
       </Link>
     )

@@ -9,9 +9,9 @@ import { IoIosPartlySunny } from 'react-icons/io'
 import { MdComputer } from 'react-icons/md'
 
 
-const NPInfo = ({np, user}) => {
+const NPInfo = ({np, sesion}) => {
     window.scrollTo(0, 0)
-    const npInfo = np.find(park => park.id === user.npID)
+    const npInfo = np.find(park => park.id === sesion.npID)
     const { 
         id, 
         visited, 
@@ -64,7 +64,7 @@ const NPInfo = ({np, user}) => {
                 </article>
 
                 <div className='np-info-map'>
-                    <MiniMap 
+                    <MiniMap
                         lat={latitude}
                         lng={longitude}
                         id={id}
@@ -82,7 +82,7 @@ const NPInfo = ({np, user}) => {
 
 export const mapState = state => ({
     np: state.np,
-    user: state.user
+    sesion: state.sesion
 })
 
 export default connect(mapState)(NPInfo)

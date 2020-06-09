@@ -16,7 +16,7 @@ class NoteForm extends Component {
 
     addNote = (e) => {
         e.preventDefault()
-        const npInfo = this.props.np.find(park => park.id === this.props.user.npID)
+        const npInfo = this.props.np.find(park => park.id === this.props.sesion.npID)
         npInfo.notes.push(this.state.note)
         this.props.addAllNP([npInfo])
         this.setState({ note: '' });
@@ -26,6 +26,7 @@ class NoteForm extends Component {
         return (
             <form className='note-form'>
                 <textarea
+                    data-testid='note-input'
                     rows='4'
                     name='note'
                     type='textarea'
@@ -46,8 +47,8 @@ class NoteForm extends Component {
 }
 
 export const mapState = state => ({
-    user: state.user,
-    np: state.np
+    np: state.np,
+    sesion: state.sesion
 })
 
 const mapDispatch = (dispatch) => ({

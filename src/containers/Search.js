@@ -8,7 +8,6 @@ import { FaSearchLocation, FaSearch } from 'react-icons/fa'
 import { BsBucket } from 'react-icons/bs'
 import { cleanNPData } from '../helper'
 
-
 class Search extends Component {
     constructor(props) {
         super(props);
@@ -65,7 +64,7 @@ class Search extends Component {
                 <section className='search-wrapper'>
                     <div className='search-item-wrapper'>
                         <div className='search-item'>
-                            <label htmlFor="stateCode">Change state:</label>
+                            <label htmlFor="stateCode">Change state:
                             <input
                                 name='stateCode'
                                 type='text'
@@ -73,8 +72,10 @@ class Search extends Component {
                                 placeholder="e.g. CO"
                                 onChange={this.handleChange} 
                             />
+                            </label>
                         </div>
                         <button
+                            data-testid='change-state-btn'
                             className='search-btn'
                             disabled={!this.isStateCodeValid('stateCode')}
                             onClick={this.changeState}
@@ -84,7 +85,7 @@ class Search extends Component {
                     </div>
                     <div className='search-item-wrapper'>
                         <div className='search-item'>
-                            <label htmlFor="stateCodeAdd">Add state:</label>
+                            <label htmlFor="stateCodeAdd">Add state:
                             <input
                                 name='stateCodeAdd'
                                 type='text'
@@ -92,8 +93,10 @@ class Search extends Component {
                                 placeholder="e.g. CO ( one at a time... )"
                                 onChange={this.handleChange} 
                             />
+                            </label>
                         </div>
                         <button
+                            data-testid='add-state-btn'
                             className='search-btn'
                             disabled={!this.isStateCodeValid('stateCodeAdd')}
                             onClick={this.addState}
@@ -104,7 +107,7 @@ class Search extends Component {
                     </div>
                     <div className='search-item-wrapper'>
                         <div className='search-item'>
-                            <label htmlFor="keyword">Search by National Park title:</label>
+                            <label htmlFor="keyword">Search by National Park title:
                             <input
                                 name='keyword'
                                 type='text'
@@ -112,8 +115,10 @@ class Search extends Component {
                                 placeholder="e.g. Monument"
                                 onChange={this.handleChange} 
                             />
+                            </label>
                         </div>
                         <Link
+                            data-testid='search-btn'
                             onClick={this.search}
                             to={`/explore/search`}
                             className='search-btn'
