@@ -9,6 +9,8 @@ import rootReducer from '../reducers'
 
 describe('<App/>', () => {
 
+
+
   let AppContainer
   let store
   

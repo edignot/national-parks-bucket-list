@@ -19,7 +19,16 @@ describe('<MapTag/>', () => {
     MapTagContainer = render(
       <Provider store={store}>
         <BrowserRouter>
-            <MapTag/>
+            <MapTag
+              key='id'
+              lat='lat'
+              lng='lng'
+              id='id'
+              name='name'
+              designation='designation'
+              visited={true}
+              bucket={false}
+            />
         </BrowserRouter>
       </Provider>
     )
@@ -28,7 +37,8 @@ describe('<MapTag/>', () => {
   afterEach(cleanup)
   
   test('<MapTag/> component successfully renders', () => {
-    const { getByText } = MapTagContainer
-    expect(true).toBeTruthy()
+    const { getByTestId } = MapTagContainer
+    expect(getByTestId('visited-true')).toBeInTheDocument()
+    expect(getByTestId('bucket-false')).toBeInTheDocument()
   })
 })
