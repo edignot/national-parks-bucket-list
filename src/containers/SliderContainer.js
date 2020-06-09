@@ -38,30 +38,38 @@ const SliderContainer = ({np, sesion, toggleBucketNP, toggleVisitedNP}) => {
         <section className='slider-container'>
             <Link to="/explore">
                 <FaArrowCircleLeft
-                    className="details-back-btn"
+                    data-testid='back-btn'
+                    className='details-back-btn'
                 />
             </Link>
             {!visited
                 ? <FaRegCircle
-                    className="np-slider-check"
+                    data-testid='visited-false'
+                    className='np-slider-check'
                     onClick={() => toggleVisitedNP(id)}
                     />
                 : <FaCheckCircle
-                    className="np-slider-check"
+                    data-testid='visited-true'
+                    className='np-slider-check'
                     onClick={() => toggleVisitedNP(id)}
                     />
                 }
                 {!bucket
                 ? <BsBucket
-                    className="np-slider-bucket"
+                    data-testid='bucket-false'
+                    className='np-slider-bucket'
                     onClick={() => toggleBucketNP(id)}
                     />
                 : <BsBucketFill
-                    className="np-slider-bucket"
+                    data-testid='bucket-true'
+                    className='np-slider-bucket'
                     onClick={() => toggleBucketNP(id)}
                     />
               }
-            <Slider {...sliderSettings} className='np-slider'>
+            <Slider 
+                {...sliderSettings} 
+                className='np-slider'
+            >
               {sliderItems}
             </Slider>
         </section>
