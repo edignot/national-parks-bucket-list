@@ -64,7 +64,7 @@ const NPInfo = ({np, sesion}) => {
                 </article>
 
                 <div className='np-info-map'>
-                    <MiniMap 
+                    <MiniMap
                         lat={latitude}
                         lng={longitude}
                         id={id}
