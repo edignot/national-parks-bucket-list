@@ -8,7 +8,6 @@ import { FaSearchLocation, FaSearch } from 'react-icons/fa'
 import { BsBucket } from 'react-icons/bs'
 import { cleanNPData } from '../helper'
 
-
 class Search extends Component {
     constructor(props) {
         super(props);

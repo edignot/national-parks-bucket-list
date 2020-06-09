@@ -73,7 +73,7 @@ describe('<NoteForm/>', () => {
   })
 
   test('Add note input value is changed', () => {
-    const { getByText, getByTestId } = NoteFormContainer
+    const { getByTestId } = NoteFormContainer
     getByTestId('note-input').value = 'note3'
     fireEvent.change(getByTestId('note-input'))
     expect(getByTestId('note-input').value).toBe('note3')

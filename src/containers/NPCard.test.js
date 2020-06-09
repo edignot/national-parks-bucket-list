@@ -9,6 +9,8 @@ import rootReducer from '../reducers'
 
 describe('<NPCard/>', () => {
 
+  const toggleVisitedNPmock = jest.fn()
+
   let NPCardContainer
   let store
   
@@ -33,6 +35,7 @@ describe('<NPCard/>', () => {
                 bucket={true}
                 visited={false}
                 notes={[]}
+                toggleVisitedNP={toggleVisitedNPmock}
             />
         </BrowserRouter>
       </Provider>

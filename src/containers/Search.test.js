@@ -68,7 +68,7 @@ describe('<Search/>', () => {
   })
 
   test('that search input is cleared', () => {
-    const { getByTestId, getByLabelText, debug } = SearchContainer
+    const { getByTestId, getByLabelText } = SearchContainer
     getByLabelText('Search by National Park title:').value = 'PARK'
     fireEvent.change(getByLabelText('Search by National Park title:'))
     fireEvent.click(getByTestId('search-btn'))
