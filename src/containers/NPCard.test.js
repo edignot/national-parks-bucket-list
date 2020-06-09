@@ -44,5 +44,24 @@ describe('<NPCard/>', () => {
   test('<NPCard/> component successfully renders', () => {
     const { getByText } = NPCardContainer
     expect(getByText('name1 designation1')).toBeInTheDocument()
+    expect(getByText('states1')).toBeInTheDocument()
+  })
+
+  test('toggle bucket icon', () => {
+    const { getByTestId, queryByTestId } = NPCardContainer
+    expect(getByTestId('visited-false')).toBeInTheDocument()
+    expect(queryByTestId('visited-true')).not.toBeInTheDocument()
+  })
+
+  test('toggle visited icon', () => {
+    const { getByTestId, queryByTestId } = NPCardContainer
+    expect(getByTestId('bucket-true')).toBeInTheDocument()
+    expect(queryByTestId('bucket-false')).not.toBeInTheDocument()
+  })
+
+  test('display image', () => {
+    const { getByTestId, queryByTestId } = NPCardContainer
+    expect(getByTestId('bucket-true')).toBeInTheDocument()
+    expect(queryByTestId('bucket-false')).not.toBeInTheDocument()
   })
 })
