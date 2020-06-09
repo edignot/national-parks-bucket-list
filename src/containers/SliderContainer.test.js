@@ -79,5 +79,6 @@ describe('<SliderContainer/>', () => {
   test('displays slider', () => {
     const { getByText } = SliderContainerContainer
     expect(getByText('1')).toBeInTheDocument()
+    expect(getByText('2')).toBeInTheDocument()
   })
 })

@@ -85,9 +85,9 @@ describe('<User/>', () => {
   })
 
   test('<User/> component successfully renders', () => {
-    const { getByText } = UserContainer
+    const { getByText, queryByText } = UserContainer
     expect(getByText('edita')).toBeInTheDocument()
     fireEvent.click(getByText('LOGOUT'))
-    // expect(getByText('edita')).not.toBeInTheDocument()
+    expect(queryByText('edita')).not.toBeInTheDocument()
   })
 })
