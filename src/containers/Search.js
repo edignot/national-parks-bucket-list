@@ -65,7 +65,7 @@ class Search extends Component {
                 <section className='search-wrapper'>
                     <div className='search-item-wrapper'>
                         <div className='search-item'>
-                            <label htmlFor="stateCode">Change state:</label>
+                            <label htmlFor="stateCode">Change state:
                             <input
                                 name='stateCode'
                                 type='text'
@@ -73,6 +73,7 @@ class Search extends Component {
                                 placeholder="e.g. CO"
                                 onChange={this.handleChange} 
                             />
+                            </label>
                         </div>
                         <button
                             className='search-btn'
@@ -84,7 +85,7 @@ class Search extends Component {
                     </div>
                     <div className='search-item-wrapper'>
                         <div className='search-item'>
-                            <label htmlFor="stateCodeAdd">Add state:</label>
+                            <label htmlFor="stateCodeAdd">Add state:
                             <input
                                 name='stateCodeAdd'
                                 type='text'
@@ -92,6 +93,7 @@ class Search extends Component {
                                 placeholder="e.g. CO ( one at a time... )"
                                 onChange={this.handleChange} 
                             />
+                            </label>
                         </div>
                         <button
                             className='search-btn'
@@ -104,7 +106,7 @@ class Search extends Component {
                     </div>
                     <div className='search-item-wrapper'>
                         <div className='search-item'>
-                            <label htmlFor="keyword">Search by National Park title:</label>
+                            <label htmlFor="keyword">Search by National Park title:
                             <input
                                 name='keyword'
                                 type='text'
@@ -112,6 +114,7 @@ class Search extends Component {
                                 placeholder="e.g. Monument"
                                 onChange={this.handleChange} 
                             />
+                            </label>
                         </div>
                         <Link
                             onClick={this.search}

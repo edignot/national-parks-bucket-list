@@ -1,23 +1,34 @@
-// import React from 'react'
-// import { render, cleanup, fireEvent } from '@testing-library/react'
-// import SliderContainer from './SliderContainer'
-// import { BrowserRouter } from 'react-router-dom'
+import React from 'react'
+import { render, cleanup, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+import SliderContainer from './SliderContainer'
+import { BrowserRouter } from 'react-router-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from '../reducers'
 
-// describe('<SliderContainer/>', () => {
-//   let SliderContainerContainer
+describe('<SliderContainer/>', () => {
+
+  let SliderContainerContainer
+  let store
   
-//   beforeEach(() => {
-//     SliderContainerContainer = render(
-//       <BrowserRouter>
-//         <SliderContainer/>
-//       </BrowserRouter>
-//     )
-//   })
+  beforeEach(() => {
+
+    store = createStore(rootReducer)
+
+    SliderContainerContainer = render(
+        <Provider store={store}>
+            <BrowserRouter>
+                <SliderContainer/>
+            </BrowserRouter>
+        </Provider>
+    )
+  })
   
-//   afterEach(cleanup)
+  afterEach(cleanup)
   
-//   test('<SliderContainer/> component successfully renders', () => {
-//     const { getByText } = SliderContainerContainer
-//     expect(true).toBeTruthy()
-//   })
-// })
+  test('<SliderContainer/> component successfully renders', () => {
+    const { getByText } = SliderContainerContainer
+    expect(true).toBeTruthy()
+  })
+})

@@ -53,7 +53,7 @@ const SliderContainer = ({np, sesion, toggleBucketNP, toggleVisitedNP}) => {
                 }
                 {!bucket
                 ? <BsBucket
-                    className="np-slider-bucket"t
+                    className="np-slider-bucket"
                     onClick={() => toggleBucketNP(id)}
                     />
                 : <BsBucketFill

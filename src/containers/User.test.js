@@ -41,8 +41,9 @@ describe('<User/>', () => {
     expect(getByText('CO')).toBeInTheDocument()
   })
 
-//   test('<User/> component successfully renders', () => {
-//     const { getByText } = UserContainer
-//     expect(getByText('National Parks')).toBeInTheDocument()
-//   })
+  test('<User/> component successfully renders', () => {
+    const { getByText } = UserContainer
+    fireEvent.click(getByText('LOGOUT'))
+    expect(location.pathname).toBe('/')
+  })
 })
