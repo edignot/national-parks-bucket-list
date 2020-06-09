@@ -15,7 +15,7 @@ describe('<NPContainer/>', () => {
   beforeEach(() => {
     initialState = { 
         sesion: {
-            search: 'name1',
+            search: 'search',
             npID: ''
         },
         np: [{
@@ -91,6 +91,33 @@ describe('<NPContainer/>', () => {
   })
   
   afterEach(cleanup)
+
+  test('<NPContainer component sucessfully renders', () => {
+    const store = createStore(rootReducer, initialState)
+    const { getByText } = render(
+        <Provider store={store}>
+           <BrowserRouter>
+               <NPContainer filter='all parks'/>
+           </BrowserRouter>
+        </Provider>
+       )
+    expect(getByText('all parks')).toBeInTheDocument()
+  })
+
+  test('displays all parks if all parks filter is passed', () => {
+    const store = createStore(rootReducer, initialState2)
+    const { getByText } = render(
+        <Provider store={store}>
+           <BrowserRouter>
+               <NPContainer filter='all parks'/>
+           </BrowserRouter>
+        </Provider>
+       )
+    expect(getByText('name1 designation1')).toBeInTheDocument()
+    expect(getByText('name2 designation2')).toBeInTheDocument()
+    expect(getByText('states1')).toBeInTheDocument()
+    expect(getByText('states2')).toBeInTheDocument()
+  })
   
   test('displays add visited button if visited filter is passed and none of parks are marked as visited', () => {
     const store = createStore(rootReducer, initialState)
@@ -116,27 +143,57 @@ describe('<NPContainer/>', () => {
     expect(getByText('ADD PARKS')).toBeInTheDocument()
   })
 
+  test('displays see all parks button if search results filter is passed and none of parks includes search keyword', () => {
+    const store = createStore(rootReducer, initialState)
+    const { getByText } = render(
+        <Provider store={store}>
+           <BrowserRouter>
+               <NPContainer filter='search results'/>
+           </BrowserRouter>
+        </Provider>
+       )
+    expect(getByText('SEE ALL PARKS')).toBeInTheDocument()
+  })
+
   test('don`t display add visited button if visited filter is passed and some parks are marked as visited', () => {
     const store = createStore(rootReducer, initialState2)
-    const { queryByText } = render(
+    const { queryByText, getByText } = render(
         <Provider store={store}>
            <BrowserRouter>
                <NPContainer filter='visited'/>
            </BrowserRouter>
         </Provider>
        )
+    expect(getByText('states1')).toBeInTheDocument()
+    expect(getByText('name1 designation1')).toBeInTheDocument()
     expect(queryByText('ADD VISITED')).not.toBeInTheDocument()
   })
 
   test('don`t display add parks button if bucket list filter is passed and some parks are marked as bucket', () => {
     const store = createStore(rootReducer, initialState2)
-    const { queryByText } = render(
+    const { queryByText, getByText } = render(
         <Provider store={store}>
            <BrowserRouter>
                <NPContainer filter='bucket list'/>
            </BrowserRouter>
         </Provider>
        )
+    expect(getByText('states1')).toBeInTheDocument()
+    expect(getByText('name1 designation1')).toBeInTheDocument()
     expect(queryByText('ADD PARKS')).not.toBeInTheDocument()
+  })
+
+  test('don`t display see all parks button if search results filter is passed and some parks includes search keyword', () => {
+    const store = createStore(rootReducer, initialState2)
+    const { queryByText, getByText } = render(
+        <Provider store={store}>
+           <BrowserRouter>
+               <NPContainer filter='search results'/>
+           </BrowserRouter>
+        </Provider>
+       )
+    expect(queryByText('SEE ALL PARKS')).not.toBeInTheDocument()
+    expect(getByText('states1')).toBeInTheDocument()
+    expect(getByText('name1 designation1')).toBeInTheDocument()
   })
 })
