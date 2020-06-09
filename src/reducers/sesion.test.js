@@ -30,8 +30,8 @@ describe('SESION reducer', () => {
     })
 
     test('should return the initial state', () => {
-        const expected = {search: '', npID: ''}
-        const result = sesion(undefined, {search: '', npID: ''})
+        const expected = sesionTemplate
+        const result = sesion(undefined, sesionTemplate)
         expect(result).toEqual(expected)
     })
 })

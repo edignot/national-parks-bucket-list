@@ -3,12 +3,21 @@ import { user } from './user'
 describe('USER reducer', () => {
 
     let userTemplate
+    let userInfo
 
     beforeEach(() => {
         userTemplate = {
             userName: '',
             email: '',
             stateCode: '',
+            bucketList: [],
+            visited: []
+        }
+
+        userInfo = {
+            userName: 'edita',
+            email: 'edita@gmail.com',
+            stateCode: 'CO',
             bucketList: [],
             visited: []
         }
@@ -24,44 +33,20 @@ describe('USER reducer', () => {
             }
           }
         const result = user(userTemplate, action)
-        expect(result).toEqual({
-            userName: 'edita',
-            email: 'edita@gmail.com',
-            stateCode: 'CO',
-            bucketList: [],
-            visited: []
-        })
+        expect(result).toEqual(userInfo)
     })
 
     test('should return state with updated logout info', () => {
         const action = {
             type: 'LOGOUT'
         }
-        const result = user(userTemplate, action)
-        expect(result).toEqual({
-            userName: '',
-            email: '',
-            stateCode: '',
-            bucketList: [],
-            visited: []
-        })
+        const result = user(userInfo, action)
+        expect(result).toEqual(userTemplate)
     })
 
     test('should return the initial state', () => {
-        const expected = {
-            userName: '',
-            email: '',
-            stateCode: '',
-            bucketList: [],
-            visited: []
-        }
-        const result = user(undefined, {
-            userName: '',
-            email: '',
-            stateCode: '',
-            bucketList: [],
-            visited: []
-        })
+        const expected = userTemplate
+        const result = user(undefined, userTemplate)
         expect(result).toEqual(expected)
     })
 })

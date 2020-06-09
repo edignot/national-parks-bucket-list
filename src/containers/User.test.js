@@ -1,23 +1,48 @@
-// import React from 'react'
-// import { render, cleanup, fireEvent } from '@testing-library/react'
-// import User from './User'
-// import { BrowserRouter } from 'react-router-dom'
+import React from 'react'
+import User from './User'
+import { render, cleanup, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+import { BrowserRouter } from 'react-router-dom'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from '../reducers'
 
-// describe('<User/>', () => {
-//   let UserContainer
+describe('<User/>', () => {
+
+  let UserContainer
+  let store
+  let initialState
+
+  beforeEach(() => {
+   initialState = { user: {
+        userName: 'edita',
+        email: 'edita@gmail.com',
+        stateCode: 'CO',
+        bucketList: [],
+        visited: []
+        }
+   }
+   store = createStore(rootReducer, initialState)
+    UserContainer = render(
+     <Provider store={store}>
+        <BrowserRouter>
+            <User/>
+        </BrowserRouter>
+     </Provider>
+    )
+  })
   
-//   beforeEach(() => {
-//     UserContainer = render(
-//       <BrowserRouter>
-//         <User/>
-//       </BrowserRouter>
-//     )
-//   })
+  afterEach(cleanup)
   
-//   afterEach(cleanup)
-  
+  test('<User/> component successfully renders', () => {
+    const { getByText } = UserContainer
+    expect(getByText('edita')).toBeInTheDocument()
+    expect(getByText('edita@gmail.com')).toBeInTheDocument()
+    expect(getByText('CO')).toBeInTheDocument()
+  })
+
 //   test('<User/> component successfully renders', () => {
 //     const { getByText } = UserContainer
-//     expect(true).toBeTruthy()
+//     expect(getByText('National Parks')).toBeInTheDocument()
 //   })
-// })
+})
