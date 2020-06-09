@@ -1,23 +1,34 @@
-// import React from 'react'
-// import { render, cleanup, fireEvent } from '@testing-library/react'
-// import Login from './Login'
-// import { BrowserRouter } from 'react-router-dom'
+import React from 'react'
+import { render, cleanup, fireEvent } from '@testing-library/react'
+import Login from './Login'
+import { BrowserRouter } from 'react-router-dom'
+import '@testing-library/jest-dom/extend-expect'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from '../reducers'
 
-// describe('<Login/>', () => {
-//   let LoginContainer
+describe('<Login/>', () => {
+
+  let LoginContainer
+  let store
   
-//   beforeEach(() => {
-//     LoginComponent = render(
-//       <BrowserRouter>
-//         <Login/>
-//       </BrowserRouter>
-//     )
-//   })
+  beforeEach(() => {
+
+    store = createStore(rootReducer)
+
+    LoginContainer = render(
+      <Provider store={store}>
+          <BrowserRouter>
+              <Login/>
+          </BrowserRouter>
+      </Provider>
+    )
+  })
   
-//   afterEach(cleanup)
+  afterEach(cleanup)
   
-//   test('<Login/> component successfully renders', () => {
-//     const { getByText } = LoginContainer
-//     expect(true).toBeTruthy()
-//   })
-// })
+  test('<Login/> component successfully renders', () => {
+    const { getByText } = LoginContainer
+    expect(true).toBeTruthy()
+  })
+})
