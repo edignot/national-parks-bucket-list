@@ -19,7 +19,21 @@ describe('<NPCard/>', () => {
     NPCardContainer = render(
       <Provider store={store}>
         <BrowserRouter>
-            <NPCard/>
+            <NPCard
+                name='name1'
+                designation='designation1'
+                id='id1'
+                states='states1'
+                longitude='longitude1'
+                latitude='latitude1'
+                url='url1'
+                description='description1'
+                images={['image1a', 'image1b']}
+                weatherInfo='weatherInfo1'
+                bucket={true}
+                visited={false}
+                notes={[]}
+            />
         </BrowserRouter>
       </Provider>
     )
@@ -29,6 +43,6 @@ describe('<NPCard/>', () => {
   
   test('<NPCard/> component successfully renders', () => {
     const { getByText } = NPCardContainer
-    expect(true).toBeTruthy()
+    expect(getByText('name1 designation1')).toBeInTheDocument()
   })
 })

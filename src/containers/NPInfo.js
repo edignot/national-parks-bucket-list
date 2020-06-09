@@ -25,7 +25,6 @@ const NPInfo = ({np, sesion}) => {
         weatherInfo,
         url
      } = npInfo
-     console.log(npInfo)
         
     return (
         <section className='np-info-container'>
