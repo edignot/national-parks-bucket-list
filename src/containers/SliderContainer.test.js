@@ -64,7 +64,7 @@ describe('<SliderContainer/>', () => {
   })
   
   afterEach(cleanup)
-  
+
   test('<SliderContainer/> component successfully renders', () => {
     const { getByTestId } = SliderContainerContainer
     expect(getByTestId('back-btn')).toBeInTheDocument()
@@ -74,6 +74,12 @@ describe('<SliderContainer/>', () => {
     const { getByTestId, queryByTestId } = SliderContainerContainer
     expect(getByTestId('visited-false')).toBeInTheDocument()
     expect(queryByTestId('visited-true')).not.toBeInTheDocument()
+  })
+
+  test('toggle bucket icon', () => {
+    const { getByTestId, queryByTestId } = SliderContainerContainer
+    expect(getByTestId('bucket-true')).toBeInTheDocument()
+    expect(queryByTestId('bucket-false')).not.toBeInTheDocument()
   })
 
   test('displays slider', () => {
