@@ -76,6 +76,7 @@ class Search extends Component {
                             </label>
                         </div>
                         <button
+                            data-testid='change-state-btn'
                             className='search-btn'
                             disabled={!this.isStateCodeValid('stateCode')}
                             onClick={this.changeState}
@@ -96,6 +97,7 @@ class Search extends Component {
                             </label>
                         </div>
                         <button
+                            data-testid='add-state-btn'
                             className='search-btn'
                             disabled={!this.isStateCodeValid('stateCodeAdd')}
                             onClick={this.addState}

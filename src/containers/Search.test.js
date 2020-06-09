@@ -32,31 +32,39 @@ describe('<Search/>', () => {
     expect(getByLabelText('Change state:')).toBeInTheDocument()
   })
 
-  test('<Search/> component Change state input value is changed', () => {
+  test('Change state input value is changed', () => {
     const { getByLabelText } = SearchContainer
     getByLabelText('Change state:').value = 'AK'
     fireEvent.change(getByLabelText('Change state:'))
     expect(getByLabelText('Change state:').value).toBe('AK')
   })
 
-  test('<Search/> component Add state input value is changed', () => {
+  test('Add state input value is changed', () => {
     const { getByLabelText } = SearchContainer
     getByLabelText('Add state:').value = 'AK'
     fireEvent.change(getByLabelText('Add state:'))
     expect(getByLabelText('Add state:').value).toBe('AK')
   })
 
-  test('<Search/> component Change state input value is changed', () => {
-    const { getByLabelText } = SearchContainer
-    getByLabelText('Change state:').value = 'AK'
-    fireEvent.change(getByLabelText('Change state:'))
-    expect(getByLabelText('Change state:').value).toBe('AK')
-  })
-
-  test('<Search/> component Change state input value is changed', () => {
+  test('Search by National Park title input value is changed', () => {
     const { getByLabelText } = SearchContainer
     getByLabelText('Search by National Park title:').value = 'PARK'
     fireEvent.change(getByLabelText('Search by National Park title:'))
     expect(getByLabelText('Search by National Park title:').value).toBe('PARK')
   })
+
+  test('that change state button is enabled if state code is valid', () => {
+    const { getByTestId } = SearchContainer
+    expect(getByTestId('change-state-btn')).toHaveAttribute('disabled')
+    // fireEvent.change(getByLabelText('Change state:'), {target: {value: 'AK'}})
+    // expect(getByText('Change state:')).not.toHaveAttribute('disabled')
+  })
+
+  test('that add state button is enabled if state code is valid', () => {
+    const { getByTestId } = SearchContainer
+    expect(getByTestId('add-state-btn')).toHaveAttribute('disabled')
+    // fireEvent.change(getByLabelText('Change state:'), {target: {value: 'AK'}})
+    // expect(getByText('Change state:')).not.toHaveAttribute('disabled')
+  })
+
 })
