@@ -1,5 +1,6 @@
 import React from 'react'
-import { render, cleanup, fireEvent } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 import Nav from './Nav'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -18,6 +19,10 @@ describe('<Nav/>', () => {
   
   test('<Nav/> component successfully renders', () => {
     const { getByText } = NavComponent
-    expect(true).toBeTruthy()
+    expect(getByText('EXPLORE')).toBeInTheDocument()
+    expect(getByText('BUCKET LIST')).toBeInTheDocument()
+    expect(getByText('VISITED')).toBeInTheDocument()
+    expect(getByText('MAP')).toBeInTheDocument()
+    expect(getByText('USERPAGE')).toBeInTheDocument()
   })
 })
