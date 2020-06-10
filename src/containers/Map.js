@@ -2,7 +2,7 @@ import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import { connect } from 'react-redux'
 import MapTag from './MapTag'
-const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
+// const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
 
 const Map = ({np}) => {
@@ -24,7 +24,7 @@ const Map = ({np}) => {
       return (
         <div style={{ height: '100vh', width: '100vw' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: apiKey}}
+            bootstrapURLKeys={{ key: ''}}
             center={centr}
             zoom={7}
           >

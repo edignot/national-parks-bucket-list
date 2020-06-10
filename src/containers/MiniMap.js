@@ -2,7 +2,7 @@ import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import { connect } from 'react-redux'
 import MapTag from './MapTag'
-const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
+// const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
 
 
 const MiniMap = ({np, lat, lng, id, name, designation, visited, bucket}) => {
@@ -24,7 +24,7 @@ const MiniMap = ({np, lat, lng, id, name, designation, visited, bucket}) => {
       return (
         <section style={{ height: '100%', width: '100%' }}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: apiKey }}
+            bootstrapURLKeys={{ key: '' }}
             center={centr}
             zoom={10}
           >
