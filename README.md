@@ -10,6 +10,8 @@ This is a is a solo project built over the course of 6 days. The goal for this p
 ## Technologies: 
 *React*, *Redux*, *React Router*, *Fetch API*, *Lodash*, *Sass*, *ES6*, *Jest*, *react Testing Library*
 
+![1](/gifs/npblmockup.jpg)
+
 ## User story:
 ### User should be able to:
 #### Login by entering name, email and valid US state code ( upper or lowe case ). See loading page when fetching NP data.
