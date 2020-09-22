@@ -1,6 +1,6 @@
 # NATIONAL PARKS BUCKET LIST
 
-##  [visit deployed site](https://nationalparksbucketlist.netlify.app/)
+##  https://nationalparksbucketlist.netlify.app/
 
 ![1](/gifs/npblmockup.jpg)
 
