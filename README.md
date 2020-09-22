@@ -1,19 +1,20 @@
 # NATIONAL PARKS BUCKET LIST
+
 ##  [visit deployed site](https://nationalparksbucketlist.netlify.app/)
-
-## Abstract: 
-*National Parks Bucket List* is an app using [NPS Data API](https://www.nps.gov/subjects/developer/index.htm). This app allows user to explore all National Parks in US, mark them as visited, add them to personal bucket list, create text notes, see location on a map. This app doesn't try to solve any existing issue, it just had a simple purpose - inspire user for a next roadtrip and focus on clean UI.
-
-## Learning goals:
-This is a is a solo project built over the course of 6 days. The goal for this project was to learn Redux from scratch and incorporate it into the application.
-
-## Technologies: 
-*React*, *Redux*, *React Router*, *Fetch API*, *Lodash*, *Sass*, *ES6*, *Jest*, *react Testing Library*
 
 ![1](/gifs/npblmockup.jpg)
 
-## User story:
-### User should be able to:
+## About
+*National Parks Bucket List* is an app using [NPS Data API](https://www.nps.gov/subjects/developer/index.htm). This app allows user to explore all National Parks in US, mark them as visited, add them to personal bucket list, create text notes, see location on a map. This app doesn't try to solve any existing issue, it just had a simple purpose - inspire user for a next roadtrip and focus on clean UI.
+
+## Learning goals
+This is a is a solo project built over the course of 6 days. The goal for this project was to learn Redux from scratch and incorporate it into the application.
+
+## Built with 
+*React*, *Redux*, *React Router*, *Fetch API*, *Lodash*, *Sass*, *ES6*, *Jest*, *react Testing Library*
+
+## User story
+### User should be able to
 #### Login by entering name, email and valid US state code ( upper or lowe case ). See loading page when fetching NP data.
 ![1](/gifs/1.gif)
 #### See error page if there is issue from server side.
