@@ -47,4 +47,7 @@ This is a is a solo project built over the course of 6 days. The goal for this p
 4. run `npm start`
 5. Open localhost:3000 in your favorite browser (unless your terminal says otherwise)
 
+### Contributors
+- [Edita Ignot](https://github.com/edignot)
+
 
