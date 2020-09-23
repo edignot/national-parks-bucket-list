@@ -11,7 +11,13 @@
 This is a is a solo project built over the course of 6 days. The goal for this project was to learn Redux from scratch and incorporate it into the application.
 
 ## Built with 
-*React*, *Redux*, *React Router*, *Fetch API*, *Lodash*, *Sass*, *ES6*, *Jest*, *react Testing Library*
+- React Redux
+- React Router
+- Fetch API
+- Lodash
+- Sass
+- Jest
+- React Testing Library
 
 ## User story
 ### User should be able to
